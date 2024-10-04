@@ -1,3 +1,6 @@
+
+
+
 //
 //  CenterStage.swift
 //  FTC Points
@@ -6,25 +9,42 @@
 //
 
 
+//
+//
+//
+//  Future of Full-Count:
+//  1. Add more languages than just english
+//  2. Add sounds to the buttons
+//  3. Add name of teams in input box
+//  4. Add text ability to text friends the score
+//  5. Add camera ability to take pictures or videos of the key plays
+//
+//
+//
+//
+
 import SwiftUI
 
 struct Options: View {
-    @AppStorage ("inningType") var inningType = "top"
-    @AppStorage ("runsHome") var runsHome: Int = 0
-    @AppStorage ("runsAway") var runsAway: Int = 0
-    @AppStorage ("inning") var inning: Double = 0
+    @Environment(\.colorScheme) var colorScheme
+    @AppStorage("inningType") var inningType = "top"
+    @AppStorage("inningEnd") var inningEnd = "st"
+    @AppStorage("runsHome") var runsHome: Int = 0
+    @AppStorage("runsAway") var runsAway: Int = 0
+    @AppStorage("inning") var inning: Double = 1
     
     func restart() {
         inningType = "top"
         runsHome = 0
         runsAway = 0
         inning = 1
+        inningEnd = "st"
     }
 
     
     var body: some View {
         ZStack {
-            Color(.black)
+            
             VStack {
                 // opens game title text and displays points
                     HStack {
@@ -46,41 +66,28 @@ struct Options: View {
                 
                 ScrollView {
                     
+     
                     
-                    HStack {
-                        Text("Home:")
-                        Text("\(runsHome)")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                    }
-                    
-                    HStack {
-                        Text("Away:")
-                        Text("\(runsAway)")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                    }
-                    
-                    HStack {
-                        Text("Inning:")
-                        Text(String(Int(inning)))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        Text("(\(inningType))")
-                            .font(.subheadline)
-                            .fontWeight(.light)
-                    }
-                    
+                     
                     
                     // Innings
+                    
+                    // Away
+                    Text("Innings 🧢")
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
+                        .padding()
+                    
                     HStack {
-                        Image(systemName: "baseball.diamond.bases").foregroundColor(.white)
-                            .scaleEffect(1.4)
-                        Text("Innings")
+
+                        Text("\(inningType) of the \(Int(inning))\(inningEnd)")
                             .font(.headline)
                             .fontWeight(.black)
-                            .padding()
-                        
+
+                    }
+                    
+                    HStack {
                         Button("-") {
                             inning -= 0.5
                             if inning < 1 {
@@ -90,7 +97,21 @@ struct Options: View {
                                 inningType = "top"
                             }
                             else {
-                                inningType = "bottom"   
+                                inningType = "bottom"
+                            }
+                            
+                            
+                            if Int(inning) == 1 {
+                                inningEnd = "st"
+                            }
+                            else if Int(inning) == 2 {
+                                inningEnd = "nd"
+                            }
+                            else if Int(inning) == 3 {
+                                inningEnd = "rd"
+                            }
+                            else {
+                                inningEnd = "th"
                             }
                             
                         }
@@ -108,32 +129,42 @@ struct Options: View {
                                 inningType = "bottom"
                             }
                             
+                            if Int(inning) == 1 {
+                                inningEnd = "st"
+                            }
+                            else if Int(inning) == 2 {
+                                inningEnd = "nd"
+                            }
+                            else if Int(inning) == 3 {
+                                inningEnd = "rd"
+                            }
+                            else {
+                                inningEnd = "th"
+                            }
                         }
                         .buttonStyle(.bordered)
                         .foregroundColor(.white)
                         .background(.green)
                         .edgesIgnoringSafeArea(.all)
-                        
                     }
                     
                     
                     
                     // Home
-                    Text("Home")
+                    Text("Home 🏠 ")
                         .font(.title)
                         .fontWeight(.heavy)
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                         .padding()
                     
                     // Runs
                     HStack {
-                        Image(systemName: "figure.run").foregroundColor(.white)
-                            .scaleEffect(1.4)
-                        Text("Runs")
+                        Text("🏃 \(runsHome) Run\(runsHome == 1 ? "" : "s" )")
                             .font(.headline)
                             .fontWeight(.black)
-                            .padding()
-                        
+                    }
+                    
+                    HStack {
                         Button("-") {
                             runsHome -= 1
                             if runsHome < 0 {
@@ -154,25 +185,24 @@ struct Options: View {
                         .foregroundColor(.white)
                         .background(.green)
                         .edgesIgnoringSafeArea(.all)
-                        
                     }
                     
+                    
                     // Away
-                    Text("Away")
+                    Text("Away ⚾️")
                         .font(.title)
                         .fontWeight(.heavy)
-                        .foregroundColor(Color.gray)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                         .padding()
                     
                     // Runs
                     HStack {
-                        Image(systemName: "figure.run").foregroundColor(.white)
-                            .scaleEffect(1.4)
-                        Text("Runs")
+                        Text("🏃 \(runsAway) Run\(runsAway == 1 ? "" : "s" )")
                             .font(.headline)
                             .fontWeight(.black)
-                            .padding()
-                        
+                    }
+                    
+                    HStack {
                         Button("-") {
                             runsAway -= 1
                             if runsAway < 0 {
@@ -193,7 +223,6 @@ struct Options: View {
                         .foregroundColor(.white)
                         .background(.green)
                         .edgesIgnoringSafeArea(.all)
-                        
                     }
                 }
                 
@@ -203,13 +232,13 @@ struct Options: View {
                         restart()
                     }
                     .buttonStyle(.bordered)
-                    .foregroundColor(.white)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .edgesIgnoringSafeArea(.all)
                     .padding()
                     .padding()
                 }
             }
-        }.preferredColorScheme(.dark)
+        }.preferredColorScheme(colorScheme == .dark ? .dark : .light)
     }
 }
 
