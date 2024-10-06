@@ -13,6 +13,7 @@
 //
 //
 //  Future of Full-Count:
+// Count full count, balls, strikes, outs, ...
 //  1. Add more languages than just english
 //  2. Add sounds to the buttons
 //  3. Add name of teams in input box
