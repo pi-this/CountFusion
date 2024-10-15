@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct TopTitle: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // opens game title text and displays points
+            HStack {
+                
+                Image(systemName: "figure.baseball")
+                    .foregroundColor(Color.blue)
+                    .scaleEffect(1.8)
+                    .padding()
+                
+                    
+                Text("Let's Play Ball!")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                .foregroundColor(Color.orange)
+            }
+            .padding()
     }
 }
 
 #Preview {
-    SwiftUIView()
+    TopTitle()
 }

@@ -1,14 +1,5 @@
 
 
-
-//
-//  CenterStage.swift
-//  FTC Points
-//
-//  Created by Wesley Chastain on 5/10/24.
-//
-
-
 //
 //
 //
@@ -26,13 +17,14 @@
 
 import SwiftUI
 
-struct Options: View {
+struct Runs : View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("inningType") var inningType = "top"
     @AppStorage("inningEnd") var inningEnd = "st"
     @AppStorage("runsHome") var runsHome: Int = 0
     @AppStorage("runsAway") var runsAway: Int = 0
     @AppStorage("inning") var inning: Double = 1
+    @State private var isShowingDialog = false
     
     func restart() {
         inningType = "top"
@@ -47,24 +39,9 @@ struct Options: View {
         ZStack {
             
             VStack {
-                // opens game title text and displays points
-                    HStack {
-                        
-                        Image(systemName: "figure.baseball")
-                            .foregroundColor(Color.blue)
-                            .scaleEffect(1.8)
-                            .padding()
-                        
-                            
-                        Text("Let's Play Ball!")
-                            .font(.largeTitle)
-                            .fontWeight(.heavy)
-                        .foregroundColor(Color.orange)
-                    }
+                TopTitle()
                 
-                
-            
-                
+
                 ScrollView {
                     
      
@@ -225,24 +202,38 @@ struct Options: View {
                         .background(.green)
                         .edgesIgnoringSafeArea(.all)
                     }
+                    
+                    // Clear All/Redo All
+                    HStack {
+                        Button("Restart") {
+                            isShowingDialog = true
+                        }
+                        .confirmationDialog(
+                          "Delete all data on this page?",
+                          isPresented: $isShowingDialog,
+                          titleVisibility: .visible
+                        ) {
+                          Button("Delete innings and runs", role: .destructive) {
+                              restart()
+                          }
+
+                          Button("Cancel", role: .cancel) {
+                            isShowingDialog = false
+                          }
+                        }
+                        .buttonStyle(.bordered)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
+                        .edgesIgnoringSafeArea(.all)
+                        .padding()
+                        .padding()
+                    }
                 }
                 
-                // Clear All/Redo All
-                HStack {
-                    Button("Restart") {
-                        restart()
-                    }
-                    .buttonStyle(.bordered)
-                    .foregroundColor(colorScheme == .dark ? .white : .black)
-                    .edgesIgnoringSafeArea(.all)
-                    .padding()
-                    .padding()
-                }
             }
         }.preferredColorScheme(colorScheme == .dark ? .dark : .light)
     }
 }
 
 #Preview {
-    Options()
+    Runs()
 }

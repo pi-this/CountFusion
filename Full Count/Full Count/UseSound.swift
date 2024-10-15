@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct UseSound: View {
+    @AppStorage("strikeSound") var strikeSound: Bool = true
+    @AppStorage("fullCountSound") var fullCountSound: Bool = true
+    @AppStorage("soundEnabled") var soundEnabled: Bool = true
+    @AppStorage("ballSound") var ballSound: Bool = true
+    
+    func checkSoundEnabled() {
+        if soundEnabled {
+            strikeSound = true
+            fullCountSound = true
+        }
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Form {
+                Toggle("Full Count Sound: \(fullCountSound ? "On" : "Off")", isOn: $fullCountSound)
+                    .onAppear() {
+                        checkSoundEnabled()
+                    }
+                Toggle("Strike Sound: \(strikeSound ? "On" : "Off")", isOn: $strikeSound)
+                Toggle("Ball Sound: \(ballSound ? "On" : "Off")", isOn: $ballSound)
+                
+            }
+            
+        }
     }
 }
 
