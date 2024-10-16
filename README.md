@@ -1,2 +1,3 @@
-# Full-Count
-Baseball scoring app for apple ios, made with swift UI
+# Full-Count (CountFusion)
+ios app called Count Fusion
+used for counting all sorts of things.
