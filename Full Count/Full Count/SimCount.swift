@@ -18,7 +18,7 @@ struct SimCount: View {
                     ForEach($counters, id: \.id) { $counter in
                         Section(header: Text("Count")) {
                             HStack {
-                                Stepper(value: $counter.value, in: -1_000_000...1_000_000, step: Double(addAllByStr) ?? 0) {
+                                Stepper(value: $counter.value, in: -1_000_000...1_000_000, step: Double(addAllByStr) ?? 1) {
                                     Button("\(counter.name)") {
                                         currentCounter = counter
                                         showPromptName = true
@@ -143,7 +143,7 @@ struct ChangeName: View {
             Text("Enter a Name")
                 .font(.headline)
             TextField("Enter a number", text: $inputText)
-                .keyboardType(.decimalPad)
+                .keyboardType(.default)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Button("OK") {

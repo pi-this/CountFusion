@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0EAB912CC037B400210992 /* SimPlainCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EAB902CC037B400210992 /* SimPlainCount.swift */; };
 		2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701722BF2F94F00C02353 /* Full_CountApp.swift */; };
 		2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701742BF2F94F00C02353 /* ContentView.swift */; };
 		2B9701772BF2F95100C02353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9701762BF2F95100C02353 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B0EAB902CC037B400210992 /* SimPlainCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimPlainCount.swift; sourceTree = "<group>"; };
 		2B97016F2BF2F94F00C02353 /* Full Count.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Full Count.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9701722BF2F94F00C02353 /* Full_CountApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Full_CountApp.swift; sourceTree = "<group>"; };
 		2B9701742BF2F94F00C02353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				2BA5E2142CB32FFD007778D2 /* TheCount.swift */,
 				2BDCB6BC2CB5C25A009674C1 /* Settings.swift */,
 				2BCE549C2CB7082A00BAC065 /* UseSound.swift */,
+				2B0EAB902CC037B400210992 /* SimPlainCount.swift */,
 				2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */,
 				2BC7D9C22CBAED93002E7D3F /* OpCount.swift */,
 				2B9701762BF2F95100C02353 /* Assets.xcassets */,
@@ -174,6 +177,7 @@
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
 				2BC7D9C32CBAED93002E7D3F /* OpCount.swift in Sources */,
 				2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */,
+				2B0EAB912CC037B400210992 /* SimPlainCount.swift in Sources */,
 				2BA9B54C2CBA2A3500E927B1 /* SimCount.swift in Sources */,
 				2BCE549D2CB7082A00BAC065 /* UseSound.swift in Sources */,
 				2B9701812BF2F9F400C02353 /* Runs.swift in Sources */,
