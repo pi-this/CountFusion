@@ -16,8 +16,6 @@
 		2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E2142CB32FFD007778D2 /* TheCount.swift */; };
 		2BA5E2192CB337A6007778D2 /* TopTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E2182CB337A6007778D2 /* TopTitle.swift */; };
 		2BA9B54C2CBA2A3500E927B1 /* SimCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */; };
-		2BB40EA02CB372ED002E0CAA /* FullCount.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB40E9F2CB372ED002E0CAA /* FullCount.wav */; };
-		2BC7D9C32CBAED93002E7D3F /* OpCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7D9C22CBAED93002E7D3F /* OpCount.swift */; };
 		2BCE549D2CB7082A00BAC065 /* UseSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE549C2CB7082A00BAC065 /* UseSound.swift */; };
 		2BCE54A12CB7127200BAC065 /* Ball.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BCE54A02CB7127200BAC065 /* Ball.wav */; };
 		2BDCB6BB2CB5C1A2009674C1 /* Strike.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BA2CB5C1A2009674C1 /* Strike.wav */; };
@@ -35,8 +33,6 @@
 		2BA5E2142CB32FFD007778D2 /* TheCount.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TheCount.swift; sourceTree = "<group>"; tabWidth = 4; };
 		2BA5E2182CB337A6007778D2 /* TopTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTitle.swift; sourceTree = "<group>"; };
 		2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCount.swift; sourceTree = "<group>"; };
-		2BB40E9F2CB372ED002E0CAA /* FullCount.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FullCount.wav; sourceTree = "<group>"; };
-		2BC7D9C22CBAED93002E7D3F /* OpCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpCount.swift; sourceTree = "<group>"; };
 		2BCE549C2CB7082A00BAC065 /* UseSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseSound.swift; sourceTree = "<group>"; };
 		2BCE54A02CB7127200BAC065 /* Ball.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ball.wav; sourceTree = "<group>"; };
 		2BDCB6BA2CB5C1A2009674C1 /* Strike.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Strike.wav; sourceTree = "<group>"; };
@@ -75,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				5491E92F2CC0550500757836 /* Full-Count-Info.plist */,
-				2BB40E9F2CB372ED002E0CAA /* FullCount.wav */,
 				2BDCB6BA2CB5C1A2009674C1 /* Strike.wav */,
 				2BCE54A02CB7127200BAC065 /* Ball.wav */,
 				2BA5E2182CB337A6007778D2 /* TopTitle.swift */,
@@ -87,7 +82,6 @@
 				2BCE549C2CB7082A00BAC065 /* UseSound.swift */,
 				2B0EAB902CC037B400210992 /* SimPlainCount.swift */,
 				2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */,
-				2BC7D9C22CBAED93002E7D3F /* OpCount.swift */,
 				2B9701762BF2F95100C02353 /* Assets.xcassets */,
 				2B9701782BF2F95100C02353 /* Preview Content */,
 			);
@@ -164,7 +158,6 @@
 				2BDCB6BB2CB5C1A2009674C1 /* Strike.wav in Resources */,
 				2B97017A2BF2F95100C02353 /* Preview Assets.xcassets in Resources */,
 				2B9701772BF2F95100C02353 /* Assets.xcassets in Resources */,
-				2BB40EA02CB372ED002E0CAA /* FullCount.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +170,6 @@
 			files = (
 				2BDCB6BD2CB5C25A009674C1 /* Settings.swift in Sources */,
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
-				2BC7D9C32CBAED93002E7D3F /* OpCount.swift in Sources */,
 				2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */,
 				2B0EAB912CC037B400210992 /* SimPlainCount.swift in Sources */,
 				2BA9B54C2CBA2A3500E927B1 /* SimCount.swift in Sources */,
@@ -315,12 +307,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Full Count/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LHPH7G488Z;
+				DEVELOPMENT_TEAM = G575KQ36CP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Full-Count-Info.plist";
@@ -339,10 +330,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wesleychastain.Full-Count";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesleychastainC.Full-Count";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Full Count Dev Profile";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -358,12 +348,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Full Count/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LHPH7G488Z;
+				DEVELOPMENT_TEAM = G575KQ36CP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Full-Count-Info.plist";
@@ -382,10 +371,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wesleychastain.Full-Count";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesleychastainC.Full-Count";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Full Count Dev Profile";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

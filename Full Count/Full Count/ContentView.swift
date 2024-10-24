@@ -30,7 +30,7 @@ struct ContentView: View {
                         .tag(1)
                     SimCount()
                         .tabItem {
-                            Image(systemName: "numbers")
+                            Image(systemName: "list.number")
                             Text("Multi-Count")
                                 .onSubmit {
                                     tabView = 2
