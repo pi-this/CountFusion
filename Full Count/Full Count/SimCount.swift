@@ -134,6 +134,7 @@ struct Counter: Identifiable {
 }
 
 struct ChangeName: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var counter: Counter
     @Environment(\.presentationMode) var presentationMode
     @State private var inputText = ""
@@ -151,7 +152,7 @@ struct ChangeName: View {
                 counter.name = inputText
             }
         }
-        .foregroundColor(.white)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
         .padding()
     }
 }
@@ -159,6 +160,7 @@ struct ChangeName: View {
 struct ChangeNumber: View {
     @Binding var counter: Counter
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @State private var inputText = ""
 
     var body: some View {
@@ -174,7 +176,7 @@ struct ChangeNumber: View {
                 counter.value = Double(inputText) ?? 0.0
             }
         }
-        .foregroundColor(.white)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
         .padding()
     }
 }
@@ -182,6 +184,7 @@ struct ChangeNumber: View {
 struct Subtract: View {
     @Binding var counter: Counter
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @State private var inputText = ""
 
     var body: some View {
@@ -197,7 +200,7 @@ struct Subtract: View {
                 counter.value -= Double(inputText) ?? 0.0
             }
         }
-        .foregroundColor(.white)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
         .padding()
     }
 }
@@ -205,6 +208,7 @@ struct Subtract: View {
 struct Add: View {
     @Binding var counter: Counter
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @State private var inputText = ""
 
     var body: some View {
@@ -220,7 +224,7 @@ struct Add: View {
                 counter.value += Double(inputText) ?? 0.0
             }
         }
-        .foregroundColor(.white)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
         .padding()
     }
 }

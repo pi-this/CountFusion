@@ -17,6 +17,12 @@ struct UseSound: View {
         if soundEnabled {
             strikeSound = true
             fullCountSound = true
+            ballSound = true
+        }
+        else {
+            strikeSound = false
+            fullCountSound = false
+            ballSound = false
         }
     }
 

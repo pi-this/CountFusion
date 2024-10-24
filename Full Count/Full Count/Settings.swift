@@ -131,6 +131,7 @@ struct Settings: View {
 
 struct AddAllBy: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @State private var inputText = ""
     @AppStorage("addAllByStr") var addAllByStr = ""
     
@@ -155,7 +156,7 @@ struct AddAllBy: View {
                 self.presentationMode.wrappedValue.dismiss()
             }
         }
-        .foregroundColor(.white)
+        .foregroundColor(colorScheme == .dark ? .white : .black)
         .padding()
     }
 }
