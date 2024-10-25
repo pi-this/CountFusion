@@ -147,183 +147,183 @@ struct TheCount : View {
     
     var body: some View {
         ZStack {
-            
-            
-            VStack {
+            HStack {
                 
-                ScrollView {
+                VStack {
                     
-                    Text("\(outs) out" + (outs == 1 ? "" : "s"))
-                        .font(.largeTitle)
-                        .bold()
-                    
-                    HStack {
+                    ScrollView([.horizontal, .vertical]) {
                         
+                        Text("\(outs) out" + (outs == 1 ? "" : "s"))
+                            .font(.largeTitle)
+                            .bold()
                         
-                        Button("⚾️ ball") {
+                        HStack {
                             
-                            status = "ball"
-                            playAudio(soundName: "Ball")
                             
-                            if balls >= 4 {
-                                balls = 0
-                            }
-                            else {
-                                balls += 1
-                            }
-                            
-                            if balls == 3 && strikes == 2 {
-                                if showFullCount {
-                                    fullCount = true
+                            Button("⚾️ ball") {
+                                
+                                status = "ball"
+                                playAudio(soundName: "Ball")
+                                
+                                if balls >= 4 {
+                                    balls = 0
                                 }
-                                status = "Full Count"
+                                else {
+                                    balls += 1
+                                }
+                                
+                                if balls == 3 && strikes == 2 {
+                                    if showFullCount {
+                                        fullCount = true
+                                    }
+                                    status = "Full Count"
+                                }
+                                else {
+                                    fullCount = false
+                                }
+                                
+                                if balls == 1 {
+                                    displayBalls = "⚾️  ⃝⃝  ⃝⃝  ⃝⃝"
+                                }
+                                else if balls == 2 {
+                                    displayBalls = "⚾️ ⚾️  ⃝⃝  ⃝⃝"
+                                }
+                                else if balls == 3 {
+                                    displayBalls =  "⚾️ ⚾️ ⚾️  ⃝⃝"
+                                }
+                                else if balls == 4 {
+                                    displayBalls = "⚾️ ⚾️ ⚾️ ⚾️"
+                                    giveStatus(takeStatus: "walk")
+                                }
+                                else {
+                                    displayBalls = " ⃝⃝  ⃝⃝  ⃝⃝  ⃝⃝"
+                                }
+                                
+                                
+                                
                             }
-                            else {
-                                fullCount = false
-                            }
+                            .buttonStyle(.bordered)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                            .edgesIgnoringSafeArea(.all)
+                            .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: 50)
                             
-                            if balls == 1 {
-                                displayBalls = "⚾️  ⃝⃝  ⃝⃝  ⃝⃝"
-                            }
-                            else if balls == 2 {
-                                displayBalls = "⚾️ ⚾️  ⃝⃝  ⃝⃝"
-                            }
-                            else if balls == 3 {
-                                displayBalls =  "⚾️ ⚾️ ⚾️  ⃝⃝"
-                            }
-                            else if balls == 4 {
-                                displayBalls = "⚾️ ⚾️ ⚾️ ⚾️"
-                                giveStatus(takeStatus: "walk")
-                            }
-                            else {
-                                displayBalls = " ⃝⃝  ⃝⃝  ⃝⃝  ⃝⃝"
-                            }
                             
+                            Text(displayBalls)
                             
-                        
                         }
-                        .buttonStyle(.bordered)
-                        .foregroundColor(colorScheme == .dark ? .white : .black)
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: 50)
                         
                         
-                        Text(displayBalls)
                         
-                    }
-                    
-                    
-                    
-                          HStack {
-                              Button("❌ strike") {
-                                  strikeHit()
-                                  playAudio(soundName: "Strike")
-                                  status = "strike"
-                                  if threeOuts && showInningOver {
-                                      inningOver = true
-                                  }
-                              }
-                              .alert(isPresented: $inningOver) {
-                                  Alert(
+                        HStack {
+                            Button("❌ strike") {
+                                strikeHit()
+                                playAudio(soundName: "Strike")
+                                status = "strike"
+                                if threeOuts && showInningOver {
+                                    inningOver = true
+                                }
+                            }
+                            .alert(isPresented: $inningOver) {
+                                Alert(
                                     title: Text("Inning over"),
                                     message: Text("A new batter is up and the outs are reset to zero."),
                                     dismissButton: .default(Text("OK")) {}
-                                  )
-                                  
-
-                              }
-                              
-                              .buttonStyle(.bordered)
-                              .foregroundColor(colorScheme == .dark ? .white : .black)
-                              .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: 50)
-                              .edgesIgnoringSafeArea(.all)
-                              .padding()
-                              
-                              
-                              
-                              Text(displayStrikes)
-                          }
-                          
-                          HStack {
-                              Button(action: {
-                                          // Action to perform when button is tapped
-                                  fouls += 1
-                                  playAudio(soundName: "FoulBall")
-                                  if !(strikes >= 2) {
-                                      strikeHit()
-                                  }
-                                  status = "foul ball"
-                                      }) {
-                                          HStack {
-                                              Image(systemName: "figure.baseball")
-                                              Text("foul")
-                                          }
-                                      }
-                              .buttonStyle(.bordered)
-                              .foregroundColor(colorScheme == .dark ? .white : .black)
-                              .edgesIgnoringSafeArea(.all)
-                              .padding()
-                              .frame(width: 120.0, height: 50)
-                              .alert(isPresented: $fullCount) {
-                                  Alert(
+                                )
+                                
+                                
+                            }
+                            
+                            .buttonStyle(.bordered)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                            .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: 50)
+                            .edgesIgnoringSafeArea(.all)
+                            .padding()
+                            
+                            
+                            
+                            Text(displayStrikes)
+                        }
+                        
+                        HStack {
+                            Button(action: {
+                                // Action to perform when button is tapped
+                                fouls += 1
+                                playAudio(soundName: "FoulBall")
+                                if !(strikes >= 2) {
+                                    strikeHit()
+                                }
+                                status = "foul ball"
+                            }) {
+                                HStack {
+                                    Image(systemName: "figure.baseball")
+                                    Text("foul")
+                                }
+                            }
+                            .buttonStyle(.bordered)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                            .edgesIgnoringSafeArea(.all)
+                            .padding()
+                            .frame(width: 120.0, height: 50)
+                            .alert(isPresented: $fullCount) {
+                                Alert(
                                     title: Text("Full Count"),
                                     message: Text("2 Strikes, 3 Balls."),
                                     dismissButton: .default(Text("OK")) {}
-                                  )
-                                  
-
-                              }
-                              
-                              .buttonStyle(.bordered)
-                              .foregroundColor(colorScheme == .dark ? .white : .black)
-                              .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: 50)
-                              .edgesIgnoringSafeArea(.all)
-                              .padding()
-                              
-                              
-                              Text("\(fouls)")
-                          }
-                    
-                    if showStatus {
-                        Text(status)
-                            .font(.largeTitle)
-                            .bold()
-                    }
-     
-                    
-                    
-                    // Clear All/Redo All
-                    HStack {
-                        Button("Restart") {
-                            isShowingDialog = true
+                                )
+                                
+                                
+                            }
+                            
+                            .buttonStyle(.bordered)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                            .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: 50)
+                            .edgesIgnoringSafeArea(.all)
+                            .padding()
+                            
+                            
+                            Text("\(fouls)")
                         }
-                        .confirmationDialog(
-                          "Delete all data on this page?",
-                          isPresented: $isShowingDialog,
-                          titleVisibility: .visible
-                        ) {
-                          Button("Delete outs, balls, strikes, and fouls", role: .destructive) {
-                              restartAll()
-                          }
-
-                          Button("Cancel", role: .cancel) {
-                            isShowingDialog = false
-                          }
+                        
+                        if showStatus {
+                            Text(status)
+                                .font(.largeTitle)
+                                .bold()
                         }
-                        .buttonStyle(.bordered)
-                        .foregroundColor(colorScheme == .dark ?  .white : .black)
-                        .edgesIgnoringSafeArea(.all)
-                        .padding()
-                        .padding()
+                        
+                        
+                        
+                        // Clear All/Redo All
+                        HStack {
+                            Button("Restart") {
+                                isShowingDialog = true
+                            }
+                            .confirmationDialog(
+                                "Delete all data on this page?",
+                                isPresented: $isShowingDialog,
+                                titleVisibility: .visible
+                            ) {
+                                Button("Delete outs, balls, strikes, and fouls", role: .destructive) {
+                                    restartAll()
+                                }
+                                
+                                Button("Cancel", role: .cancel) {
+                                    isShowingDialog = false
+                                }
+                            }
+                            .buttonStyle(.bordered)
+                            .foregroundColor(colorScheme == .dark ?  .white : .black)
+                            .edgesIgnoringSafeArea(.all)
+                            .padding()
+                            .padding()
+                        }
+                        
+                        
+                        
                     }
+                    .padding()
                     
-                    
-                    
-                }
-                .padding()
-                .frame(height: 557.0)
-
-            }.preferredColorScheme(colorScheme == .dark ? .dark : .light)
+                }.preferredColorScheme(colorScheme == .dark ? .dark : .light)
+            }
         }
     }
 }

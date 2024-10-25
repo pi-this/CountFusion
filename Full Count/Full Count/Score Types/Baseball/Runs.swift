@@ -41,12 +41,8 @@ struct Runs : View {
             VStack {
                 
                 HStack {
-                    ScrollView {
-                        
-                        
-                        
-                        
-                        
+                    ScrollView([.horizontal, .vertical]){
+   
                         // Innings
                         
                         // Away

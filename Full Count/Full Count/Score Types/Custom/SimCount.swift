@@ -4,10 +4,10 @@ struct SimCount: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var counters: [Counter] = [Counter(name: "Name", value: 0)]
     @State private var currentCounter: Counter?
-    @State private var showPromptSubtract = false
-    @State private var showPromptAdd = false
-    @State private var showPromptNumber = false
-    @State private var showPromptName = false
+    @AppStorage("showPromptSubtract") private var showPromptSubtract = false
+    @AppStorage("showPromptAdd") private var showPromptAdd = false
+    @AppStorage("showPromptNumber") private var showPromptNumber = false
+    @AppStorage("showPromptName") private var showPromptName = false
     @AppStorage("addAllByStr") var addAllByStr = ""
     
     
@@ -165,12 +165,23 @@ struct ChangeNumber: View {
 
     var body: some View {
         VStack {
-            Text("Enter an Amount")
-                .font(.headline)
-            TextField("Enter a number", text: $inputText)
-                .keyboardType(.decimalPad)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            HStack {
+                Text("Enter an Amount")
+                    .font(.headline)
+                
+                TextField("Enter a number", text: $inputText)
+                    .keyboardType(.decimalPad)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: {
+                    self.inputText.removeAll()
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                }
+                .foregroundColor(Color.red)
+            }
+            
             Button("OK") {
                 self.presentationMode.wrappedValue.dismiss()
                 counter.value = Double(inputText) ?? 0.0
@@ -189,12 +200,23 @@ struct Subtract: View {
 
     var body: some View {
         VStack {
-            Text("Enter Amount to Subtract")
-                .font(.headline)
-            TextField("Enter a number", text: $inputText)
-                .keyboardType(.decimalPad)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            HStack {
+                Text("Enter Amount to Subtract")
+                    .font(.headline)
+                
+                TextField("Enter a number", text: $inputText)
+                    .keyboardType(.decimalPad)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: {
+                    self.inputText.removeAll()
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                }
+                .foregroundColor(Color.red)
+            }
+            
             Button("OK") {
                 self.presentationMode.wrappedValue.dismiss()
                 counter.value -= Double(inputText) ?? 0.0
@@ -213,12 +235,24 @@ struct Add: View {
 
     var body: some View {
         VStack {
-            Text("Enter Amount to Add")
-                .font(.headline)
-            TextField("Enter a number", text: $inputText)
-                .keyboardType(.decimalPad)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            HStack {
+                Text("Enter Amount to Add")
+                    .font(.headline)
+                
+                TextField("Enter a number", text: $inputText)
+                    .keyboardType(.decimalPad)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button(action: {
+                    self.inputText.removeAll()
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                }
+                .foregroundColor(Color.red)
+            }
+            
+            
             Button("OK") {
                 self.presentationMode.wrappedValue.dismiss()
                 counter.value += Double(inputText) ?? 0.0
