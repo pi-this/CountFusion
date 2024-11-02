@@ -109,10 +109,11 @@ struct Settings: View {
     @AppStorage("addAllByStr") var addAllByStr = ""
     @AppStorage("showFullCount") var showFullCount: Bool = false
     @AppStorage("showInningOver") var showInningOver: Bool = true
-    @AppStorage("modeWanted") var modeWanted: String = ""
+    
     
     // 2 is baseball
     // 1 is custom
+    // 3 is To Do
 
     var body: some View {
         NavigationView {
@@ -122,6 +123,7 @@ struct Settings: View {
                     Picker(selection: $scoreType, label: Text("Score Type")) {
                         Text("Custom").tag(1)
                         Text("Baseball").tag(2)
+                        Text("To Do").tag(3)
                     }
                 }
                 
@@ -237,48 +239,22 @@ struct Settings: View {
                     
                 }
                 
-                VStack {
-                    Section(header: Text("Light or Dark Mode?")) {
-                        VStack {
-                            HStack {
-                                Spacer()
-                                Button(action: {
-                                    modeWanted = "light"
-                                }) {
-                                    Text("Light ☀️")
-                                }
-                                .buttonStyle(.bordered)
-                                .foregroundColor(colorScheme == .dark ? .white : .black)
-                                .border(modeWanted == "light" ? Color.blue : .clear)
-                                .edgesIgnoringSafeArea(.all)
-                                
-                                Button(action: {
-                                    modeWanted = "dark"
-                                }) {
-                                    Text("Dark 🌙")
-                                }
-                                .buttonStyle(.bordered)
-                                .foregroundColor(colorScheme == .dark ? .white : .black)
-                                .border(modeWanted == "dark" ? Color.blue : .clear)
-                                .edgesIgnoringSafeArea(.all)
-                                Spacer()
-                            }
-                            HStack {
-                                Spacer()
-                                Button(action: {
-                                    addAllByStr = ""
-                                }) {
-                                    Text("Follow System Settings 📲")
-                                }
-                                .buttonStyle(.bordered)
-                                .foregroundColor(colorScheme == .dark ? .white : .black)
-                                .border(modeWanted  == "" ? Color.blue : .clear)
-                                .edgesIgnoringSafeArea(.all)
-                                Spacer()
-                            }
+                
+               else if scoreType == 3 {
+                   Section(header: Text("Questions")) {
+                       Toggle("Do It? (\(soundEnabled ? "On" : "Off"))", isOn: $soundEnabled)
+                   }
+                }
+                
+                
+                Section(header: Text("Advanced Settings")) {
+                    VStack {
+                        NavigationLink(destination: AS_Menu()) {
+                            Text("Open")
                         }
                     }
                 }
+                
                 
                 restartSettings()
                 

@@ -1,7 +1,4 @@
-//
-//  Info.plist
-//  Full Count
-//
-//  Created by Todd Chastain on 10/16/24.
-//
-
+{
+	CFBundleIdentifier = "";
+	CFBundleDisplayName = CountFusion;
+}

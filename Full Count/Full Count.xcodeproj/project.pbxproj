@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2B0EAB912CC037B400210992 /* SimPlainCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0EAB902CC037B400210992 /* SimPlainCount.swift */; };
+		2B8C81A52CCF1EE000F08D24 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A42CCF1ED900F08D24 /* ListRowView.swift */; };
+		2B8C81A72CCF20D600F08D24 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A62CCF20D600F08D24 /* AddView.swift */; };
+		2B8C81AA2CCF237600F08D24 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A92CCF237600F08D24 /* ItemModel.swift */; };
+		2B8C81AD2CCF29D600F08D24 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81AC2CCF29D600F08D24 /* ListViewModel.swift */; };
 		2B9115612CCAF9D5005D95F3 /* Ball.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115602CCAF9D5005D95F3 /* Ball.wav */; };
 		2B9115632CCAF9E4005D95F3 /* FoulBall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115622CCAF9E4005D95F3 /* FoulBall.wav */; };
 		2B9115652CCB01B7005D95F3 /* Strike.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115642CCB01B7005D95F3 /* Strike.wav */; };
@@ -16,14 +20,24 @@
 		2B9701772BF2F95100C02353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9701762BF2F95100C02353 /* Assets.xcassets */; };
 		2B97017A2BF2F95100C02353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9701792BF2F95100C02353 /* Preview Assets.xcassets */; };
 		2B9701812BF2F9F400C02353 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701802BF2F9F400C02353 /* Runs.swift */; };
+		2BA3AD812CCEF89B00FF8ABC /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3AD802CCEF89B00FF8ABC /* ToDoList.swift */; };
 		2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E2142CB32FFD007778D2 /* TheCount.swift */; };
-		2BA9B54C2CBA2A3500E927B1 /* SimCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */; };
+		2BBB42062CCC0F7200B94E2B /* AS_Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* AS_Menu.swift */; };
 		2BCE549D2CB7082A00BAC065 /* UseSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE549C2CB7082A00BAC065 /* UseSound.swift */; };
 		2BDCB6BD2CB5C25A009674C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* Settings.swift */; };
+		2BDEC1262CD16E2A00DDF657 /* CountSpaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEC1252CD16E2600DDF657 /* CountSpaceList.swift */; };
+		2BDEC1292CD16EC500DDF657 /* CountSpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEC1282CD16EBB00DDF657 /* CountSpaceModel.swift */; };
+		2BDEC12B2CD1701100DDF657 /* ListCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEC12A2CD1700800DDF657 /* ListCountView.swift */; };
+		2BF276432CD5506600D2A3A5 /* InsideAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276422CD5506600D2A3A5 /* InsideAddedView.swift */; };
+		2BF276452CD550DB00D2A3A5 /* ToDoListMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* ToDoListMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B0EAB902CC037B400210992 /* SimPlainCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimPlainCount.swift; sourceTree = "<group>"; };
+		2B8C81A42CCF1ED900F08D24 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		2B8C81A62CCF20D600F08D24 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		2B8C81A92CCF237600F08D24 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		2B8C81AC2CCF29D600F08D24 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		2B9115602CCAF9D5005D95F3 /* Ball.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ball.wav; sourceTree = "<group>"; };
 		2B9115622CCAF9E4005D95F3 /* FoulBall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FoulBall.wav; sourceTree = "<group>"; };
 		2B9115642CCB01B7005D95F3 /* Strike.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Strike.wav; sourceTree = "<group>"; };
@@ -33,11 +47,16 @@
 		2B9701762BF2F95100C02353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B9701792BF2F95100C02353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B9701802BF2F9F400C02353 /* Runs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runs.swift; sourceTree = "<group>"; };
+		2BA3AD802CCEF89B00FF8ABC /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		2BA5E2142CB32FFD007778D2 /* TheCount.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TheCount.swift; sourceTree = "<group>"; tabWidth = 4; };
-		2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCount.swift; sourceTree = "<group>"; };
+		2BBB42052CCC0F7100B94E2B /* AS_Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_Menu.swift; sourceTree = "<group>"; };
 		2BCE549C2CB7082A00BAC065 /* UseSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseSound.swift; sourceTree = "<group>"; };
 		2BDCB6BC2CB5C25A009674C1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		5491E92F2CC0550500757836 /* Full-Count-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Full-Count-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2BDEC1252CD16E2600DDF657 /* CountSpaceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceList.swift; sourceTree = "<group>"; };
+		2BDEC1282CD16EBB00DDF657 /* CountSpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceModel.swift; sourceTree = "<group>"; };
+		2BDEC12A2CD1700800DDF657 /* ListCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCountView.swift; sourceTree = "<group>"; };
+		2BF276422CD5506600D2A3A5 /* InsideAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAddedView.swift; sourceTree = "<group>"; };
+		2BF276442CD550DB00D2A3A5 /* ToDoListMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +70,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B8C81A32CCF1E7F00F08D24 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C81AB2CCF29B200F08D24 /* ViewModels */,
+				2B8C81A82CCF235700F08D24 /* Models */,
+				2B8C81A42CCF1ED900F08D24 /* ListRowView.swift */,
+				2BA3AD802CCEF89B00FF8ABC /* ToDoList.swift */,
+				2BF276442CD550DB00D2A3A5 /* ToDoListMainView.swift */,
+				2B8C81A62CCF20D600F08D24 /* AddView.swift */,
+				2BF276422CD5506600D2A3A5 /* InsideAddedView.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		2B8C81A82CCF235700F08D24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C81A92CCF237600F08D24 /* ItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B8C81AB2CCF29B200F08D24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C81AC2CCF29D600F08D24 /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2B9115682CCB4082005D95F3 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				2BDEC1242CD16D9700DDF657 /* MultiCount */,
 				2B0EAB902CC037B400210992 /* SimPlainCount.swift */,
-				2BA9B54B2CBA2A3500E927B1 /* SimCount.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -74,6 +123,7 @@
 			children = (
 				2BDCB6BC2CB5C25A009674C1 /* Settings.swift */,
 				2BCE549C2CB7082A00BAC065 /* UseSound.swift */,
+				2BBB42052CCC0F7100B94E2B /* AS_Menu.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -91,6 +141,7 @@
 		2B91156E2CCB41FA005D95F3 /* Score Types */ = {
 			isa = PBXGroup;
 			children = (
+				2B8C81A32CCF1E7F00F08D24 /* ToDo */,
 				2B9115682CCB4082005D95F3 /* Custom */,
 				2B9115692CCB40D7005D95F3 /* Baseball */,
 			);
@@ -117,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				2B91156B2CCB4163005D95F3 /* Sounds */,
-				5491E92F2CC0550500757836 /* Full-Count-Info.plist */,
 				2B9701722BF2F94F00C02353 /* Full_CountApp.swift */,
 				2B9701742BF2F94F00C02353 /* ContentView.swift */,
 				2B91156A2CCB414A005D95F3 /* Settings */,
@@ -134,6 +184,24 @@
 				2B9701792BF2F95100C02353 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2BDEC1242CD16D9700DDF657 /* MultiCount */ = {
+			isa = PBXGroup;
+			children = (
+				2BDEC1272CD16E9E00DDF657 /* The List */,
+			);
+			path = MultiCount;
+			sourceTree = "<group>";
+		};
+		2BDEC1272CD16E9E00DDF657 /* The List */ = {
+			isa = PBXGroup;
+			children = (
+				2BDEC12A2CD1700800DDF657 /* ListCountView.swift */,
+				2BDEC1282CD16EBB00DDF657 /* CountSpaceModel.swift */,
+				2BDEC1252CD16E2600DDF657 /* CountSpaceList.swift */,
+			);
+			path = "The List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,12 +277,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF276452CD550DB00D2A3A5 /* ToDoListMainView.swift in Sources */,
+				2BBB42062CCC0F7200B94E2B /* AS_Menu.swift in Sources */,
+				2B8C81AD2CCF29D600F08D24 /* ListViewModel.swift in Sources */,
+				2B8C81AA2CCF237600F08D24 /* ItemModel.swift in Sources */,
+				2BDEC12B2CD1701100DDF657 /* ListCountView.swift in Sources */,
 				2BDCB6BD2CB5C25A009674C1 /* Settings.swift in Sources */,
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
+				2BF276432CD5506600D2A3A5 /* InsideAddedView.swift in Sources */,
+				2BDEC1292CD16EC500DDF657 /* CountSpaceModel.swift in Sources */,
+				2BDEC1262CD16E2A00DDF657 /* CountSpaceList.swift in Sources */,
 				2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */,
 				2B0EAB912CC037B400210992 /* SimPlainCount.swift in Sources */,
-				2BA9B54C2CBA2A3500E927B1 /* SimCount.swift in Sources */,
 				2BCE549D2CB7082A00BAC065 /* UseSound.swift in Sources */,
+				2B8C81A52CCF1EE000F08D24 /* ListRowView.swift in Sources */,
+				2B8C81A72CCF20D600F08D24 /* AddView.swift in Sources */,
+				2BA3AD812CCEF89B00FF8ABC /* ToDoList.swift in Sources */,
 				2B9701812BF2F9F400C02353 /* Runs.swift in Sources */,
 				2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */,
 			);
@@ -362,7 +440,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,7 +481,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

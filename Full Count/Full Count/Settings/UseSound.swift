@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct UseSound: View {
-    @AppStorage("strikeSound") var strikeSound: Bool = true
-    @AppStorage("fullCountSound") var fullCountSound: Bool = true
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
+    @AppStorage("strikeSound") var strikeSound: Bool = true
+    @AppStorage("foulBallSound") var foulBallSound: Bool = true
     @AppStorage("ballSound") var ballSound: Bool = true
     
     func checkSoundEnabled() {
         if soundEnabled {
             strikeSound = true
-            fullCountSound = true
+            foulBallSound = true
             ballSound = true
         }
         else {
             strikeSound = false
-            fullCountSound = false
+            foulBallSound = false
             ballSound = false
         }
     }
@@ -29,7 +29,7 @@ struct UseSound: View {
     var body: some View {
         NavigationView {
             Form {
-                Toggle("Full Count Sound: \(fullCountSound ? "On" : "Off")", isOn: $fullCountSound)
+                Toggle("Foul Sound: \(foulBallSound ? "On" : "Off")", isOn: $foulBallSound)
                     .onAppear() {
                         checkSoundEnabled()
                     }
