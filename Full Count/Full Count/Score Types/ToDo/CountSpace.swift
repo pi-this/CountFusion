@@ -53,7 +53,7 @@ struct ToDoList: View {
                     .listStyle(PlainListStyle())
                 }
             }
-            .navigationTitle("To-Do List 📝")
+            .navigationTitle("Counters")
             .navigationBarItems(
                 leading: EditButton(),
                 trailing:

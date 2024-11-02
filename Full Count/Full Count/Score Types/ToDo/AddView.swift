@@ -20,10 +20,11 @@ struct AddView: View {
             ScrollView {
                 VStack {
                     TextField("Type something...", text: $textFieldText)
-                        .background(Color.gray.opacity(0.1))
-                        .frame(height: 55)
-                        .cornerRadius(10)
                         .padding(.horizontal)
+                        .frame(height: 55)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
+                        
                     
                     Button(action: {
                         saveButtonPressed()
@@ -55,12 +56,11 @@ struct AddView: View {
     }
     
     func textIsAppropriate() -> Bool {
-        if textFieldText.count < 3 {
+        if textFieldText.trimmingCharacters(in: .whitespaces).isEmpty {
             showAlert.toggle()
-            alertTitle = "Title must be at least 3 characters long. Try Again. 🤔"
+            alertTitle = "Oops! You forgot to type something. 📝"
             return false
-        }
-        else {
+        } else {
             return true
         }
     }
