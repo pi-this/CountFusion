@@ -34,6 +34,12 @@ class ListViewModel: ObservableObject {
         items.remove(atOffsets: indexSet)
     }
     
+    
+    // New function to delete all items
+    func deleteAllItems() {
+        items.removeAll()
+    }
+    
     func moveItem(from: IndexSet, to: Int) {
         items.move(fromOffsets: from, toOffset: to)
     }
@@ -53,6 +59,11 @@ class ListViewModel: ObservableObject {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item.subtractToValue()
         }
+    }
+    
+    // New function to check if a title exists in the items list
+    func doesTitleExist(_ title: String) -> Bool {
+        return items.contains(where: { $0.title.lowercased() == title.lowercased() })
     }
     
     // sense we are in a class we can't use @AppStorage it is better to use user defults

@@ -15,6 +15,8 @@ struct ListRowView: View {
         HStack {
             Text(item.title)
             Text(item.value.formatted())
+                .bold()
+                .padding()
             Spacer()
         }
         .font(.title2)

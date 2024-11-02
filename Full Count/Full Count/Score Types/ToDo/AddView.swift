@@ -60,8 +60,18 @@ struct AddView: View {
             showAlert.toggle()
             alertTitle = "Oops! You forgot to type something. 📝"
             return false
-        } else {
-            return true
+        } else if listViewModel.doesTitleExist(textFieldText.trimmingCharacters(in: .whitespaces)){
+            showAlert.toggle()
+            alertTitle = "Oops! That title is already taken. 🫤"
+            return false
+        }
+        else if textFieldText.count > 15 {
+            showAlert.toggle()
+            alertTitle = "The title is too long! Please keep it under 15 characters."
+            return false
+        }
+        else {
+           return true
         }
     }
     
@@ -72,4 +82,5 @@ struct AddView: View {
 
 #Preview {
     AddView()
+        .environmentObject(ListViewModel())
 }

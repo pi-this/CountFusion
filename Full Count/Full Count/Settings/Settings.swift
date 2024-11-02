@@ -54,41 +54,93 @@ struct restartSettings: View {
     @AppStorage("showFullCount") var showFullCount: Bool = false
     @AppStorage("showInningOver") var showInningOver: Bool = true
     @AppStorage("delEverything") var delEverything: Bool = false
+    @AppStorage("showRestoreSettingsAlert") var showRestoreSettingsAlert: Bool = false
+    @AppStorage("showRestoreAllSettingsAlert") var showRestoreAllSettingsAlert: Bool = false
     
     var body: some View {
         HStack {
             Spacer()
             Button( action: {
-                if scoreType == 1 {
-                    countBySheet = false
-                    addAllByStr = "1"
-                }
-                else if scoreType == 2 {
-                    soundEnabled = true
-                    showStatus = false
-                    showFullCount = false
-                    showInningOver = true
-                }
+                showRestoreSettingsAlert = true
             }, label: {
-                Text("Restart Settings")
+                Text("Restore Score Settings")
                 Image(systemName: "arrow.trianglehead.2.counterclockwise")
             })
             .buttonStyle(PlainButtonStyle())
+            .alert(isPresented: $showRestoreSettingsAlert) {
+                Alert(
+                    title: Text("Restore Settings"),
+                    message: Text("Would you like to reset all settings for this score type to their default values?"),
+                    primaryButton: .destructive(Text("Yes, Restore")) {
+                        if scoreType == 1 {
+                            countBySheet = false
+                            addAllByStr = "1"
+                        }
+                        else if scoreType == 2 {
+                            soundEnabled = true
+                            showStatus = false
+                            showFullCount = false
+                            showInningOver = true
+                        }
+                    },
+                    secondaryButton: .cancel(Text("No"))
+
+                )
+                
+                
+            }
             Spacer()
         }
+        
         HStack {
             Spacer()
-            Button("Delete Everything") {
+            Button( action: {
+                showRestoreAllSettingsAlert = true
+            }, label: {
+                Text("Restore All Settings")
+                Image(systemName: "arrow.trianglehead.2.counterclockwise")
+            })
+            .buttonStyle(PlainButtonStyle())
+            .alert(isPresented: $showRestoreAllSettingsAlert) {
+                Alert(
+                    title: Text("Restore All Settings"),
+                    message: Text("Would you like to reset all settings for this score type to their default values?"),
+                    primaryButton: .destructive(Text("Yes, Restore")) {
+                        if scoreType == 1 {
+                            countBySheet = false
+                            addAllByStr = "1"
+                        }
+                        else if scoreType == 2 {
+                            soundEnabled = true
+                            showStatus = false
+                            showFullCount = false
+                            showInningOver = true
+                        }
+                    },
+                    secondaryButton: .cancel(Text("No"))
+
+                )
+                
+                
+            }
+            Spacer()
+        }
+        
+        
+        HStack {
+            Spacer()
+            Button("Delete Everything 🗑️") {
                 delEverything = true
             }
             .foregroundColor(.red)
             .alert(isPresented: $delEverything) {
                 Alert(
-                    title: Text("Data Reset"),
-                    message: Text("All or most of your data has been cleared. Some might remain due to apple's system security."),
+                    title: Text("Reset Complete"),
+                    message: Text("All saved data has been cleared, and settings have been reset to their defaults."),
                     dismissButton: .default(Text("OK")) {
                         deleteEverything()
                     }
+
                 )
                 
                 

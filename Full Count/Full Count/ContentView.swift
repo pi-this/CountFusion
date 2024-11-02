@@ -70,7 +70,7 @@ struct ContentView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             withAnimation(.easeIn(duration: 1)) {
                                 showText = true
-                                textOffset = 0
+                                textOffset = -15
                             }
                             
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -123,7 +123,7 @@ struct ContentView: View {
             }
             
         }
-        
+         
         else if scoreType == 2 && !isVisible {
             ZStack {
                 TabView(selection: $tabView) {

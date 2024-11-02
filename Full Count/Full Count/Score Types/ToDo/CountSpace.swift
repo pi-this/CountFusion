@@ -24,6 +24,10 @@ struct ToDoList: View {
                 // only show list if there are items
                 else {
                     List {
+                        Button("Delete all count space!") {
+                            listViewModel.deleteAllItems()
+                        }
+                        .foregroundStyle(Color.red)
                         ForEach(listViewModel.items) { item in // does not need , id: \.self because the model has an id inside
                             HStack {
                                 ListRowView(item: item)
