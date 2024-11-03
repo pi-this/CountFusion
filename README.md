@@ -1,3 +1,3 @@
-# Full-Count (CountFusion)
+CountFusion
 ios app called CountFusion.
 Used for counting all sorts of things.
