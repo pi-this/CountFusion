@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InsideAddedView: View {
+struct InsideCountSpaceView: View {
     @State var title: String = "Hello, World!"
     @State var value: String = ""
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
@@ -86,5 +86,5 @@ struct Spacers: View {
 
 #Preview {
     var item: ItemModel { .init(title: "Test Item", value: 0.0) }
-    InsideAddedView(item: item)
+    InsideCountSpaceView(item: item)
 }

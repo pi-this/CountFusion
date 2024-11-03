@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct Full_CountApp: App {
     @AppStorage("modeWanted") var modeWanted: String = ""
+    
     init() {
         // Enforce mode wanted in the app
         if modeWanted == "dark" {

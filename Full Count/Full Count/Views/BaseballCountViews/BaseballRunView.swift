@@ -17,7 +17,7 @@
 
 import SwiftUI
 
-struct Runs : View {
+struct BaseballRunView: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("inningType") var inningType = "top"
     @AppStorage("inningEnd") var inningEnd = "st"
@@ -231,5 +231,5 @@ struct Runs : View {
 }
 
 #Preview {
-    Runs()
+    BaseballRunView()
 }

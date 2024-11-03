@@ -35,6 +35,7 @@ struct ContentView: View {
     
     var body: some View {
         
+        // intro animation
         ZStack {
                 HStack {
                     Spacer()
@@ -91,7 +92,7 @@ struct ContentView: View {
         if scoreType == 1 && !isVisible {
             ZStack {
                 TabView(selection: $tabView) {
-                    SimPlainCount()
+                    SimpleCountView()
                         .tabItem {
                             Image(systemName: "numbers")
                             Text("Simple Count") 
@@ -101,7 +102,7 @@ struct ContentView: View {
                         }
                         .tag(1)
                     var item: ItemModel { .init(title: "Test Item", value: 0.0) }
-                    ToDoListMainView(item: item)
+                    CountSpaceMainView(item: item)
                         .tabItem {
                             Image(systemName: "list.number")
                             Text("Multi-Count")
@@ -110,7 +111,7 @@ struct ContentView: View {
                                 }
                         }
                         .tag(2)
-                    Settings()
+                    SettingsView()
                         .tabItem {
                             Image(systemName: "gear")
                             Text("Settings")
@@ -127,7 +128,7 @@ struct ContentView: View {
         else if scoreType == 2 && !isVisible {
             ZStack {
                 TabView(selection: $tabView) {
-                    Runs()
+                    BaseballRunView()
                         .tabItem {
                             Image(systemName: "figure.run")
                             Text("Runs")
@@ -145,7 +146,7 @@ struct ContentView: View {
                                 }
                         }
                         .tag(2)
-                    Settings()
+                    SettingsView()
                         .tabItem {
                             Image(systemName: "gear")
                             Text("Settings")
@@ -162,17 +163,17 @@ struct ContentView: View {
         else if scoreType == 3 && !isVisible {
             ZStack {
                 TabView(selection: $tabView) {
-                    ToDoList()
+                    StepView()
                         .tabItem {
-                            Image(systemName: "list.bullet.clipboard")
-                            Text("List View")
+                            Image(systemName: "figure.walk")
+                            Text("Step Count")
                                 .onSubmit {
                                     tabView = 1
                                 }
                         }
                         .environmentObject(listViewModel)
                         .tag(1)
-                    Settings()
+                    SettingsView()
                         .tabItem {
                             Image(systemName: "gear")
                             Text("Settings")

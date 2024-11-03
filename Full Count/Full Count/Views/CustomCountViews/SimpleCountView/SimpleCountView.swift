@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SimPlainCount: View {
+struct SimpleCountView: View {
     @AppStorage("simPlainNum") var simPlainNum:Double = 0
     @AppStorage("addAllByStr") var addAllByStr = ""
     
@@ -63,5 +63,5 @@ struct SimPlainCount: View {
 }
 
 #Preview {
-    SimPlainCount()
+    SimpleCountView()
 }

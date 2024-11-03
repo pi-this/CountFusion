@@ -7,30 +7,44 @@
 
 import SwiftUI
 
-struct ToDoList: View {
+struct CountSpaceView: View {
     
     @EnvironmentObject var listViewModel: ListViewModel
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
     @AppStorage("currentTitle") var currentTitle: String = ""
     @AppStorage("currentValue") var currentValue: Double = 0.0
+    @State var deleteAllItemsAlert: Bool = false
     
     var body: some View {
         NavigationView {
             ZStack {
                 if listViewModel.items.isEmpty {
-                     NoItemsView()
+                    NoCountSpaceItemsView()
                         .transition(AnyTransition.opacity.animation(.easeIn))
                 }
                 // only show list if there are items
                 else {
                     List {
-                        Button("Delete all count space!") {
-                            listViewModel.deleteAllItems()
+                        Button("Delete all counters.") {
+                            deleteAllItemsAlert = true
                         }
                         .foregroundStyle(Color.red)
+                        .alert(isPresented: $deleteAllItemsAlert) {
+                            Alert(
+                                title: Text("Delete All Counters"),
+                                message: Text("Delete All Counters"),
+                                primaryButton: .destructive(Text("Yes, delete")) {
+                                    listViewModel.deleteAllItems()
+                                },
+                                secondaryButton: .cancel()
+                                
+                            )
+                            
+                            
+                        }
                         ForEach(listViewModel.items) { item in // does not need , id: \.self because the model has an id inside
                             HStack {
-                                ListRowView(item: item)
+                                ListRowCountSpaceView(item: item)
                                     .onTapGesture {
                                         withAnimation(.linear) {
                                             currentTitle = item.title
@@ -61,13 +75,13 @@ struct ToDoList: View {
             .navigationBarItems(
                 leading: EditButton(),
                 trailing:
-                    NavigationLink("Add", destination: AddView()))
+                    NavigationLink("Add", destination: AddCountSpaceView()))
         }
     }
 }
 
 #Preview {
-    ToDoList()
+    CountSpaceView()
         .environmentObject(ListViewModel())
 }
 

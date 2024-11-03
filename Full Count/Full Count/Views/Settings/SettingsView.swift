@@ -44,115 +44,7 @@ func deleteEverything() {
 }
 
 
-struct restartSettings: View {
-    @Environment(\.colorScheme) var colorScheme
-    @AppStorage("soundEnabled") var soundEnabled: Bool = true
-    @AppStorage("showStatus") var showStatus: Bool = false
-    @AppStorage("scoreType") var scoreType = 1
-    @State private var countBySheet = false
-    @AppStorage("addAllByStr") var addAllByStr = "1"
-    @AppStorage("showFullCount") var showFullCount: Bool = false
-    @AppStorage("showInningOver") var showInningOver: Bool = true
-    @AppStorage("delEverything") var delEverything: Bool = false
-    @AppStorage("showRestoreSettingsAlert") var showRestoreSettingsAlert: Bool = false
-    @AppStorage("showRestoreAllSettingsAlert") var showRestoreAllSettingsAlert: Bool = false
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            Button( action: {
-                showRestoreSettingsAlert = true
-            }, label: {
-                Text("Restore Score Settings")
-                Image(systemName: "arrow.trianglehead.2.counterclockwise")
-            })
-            .buttonStyle(PlainButtonStyle())
-            .alert(isPresented: $showRestoreSettingsAlert) {
-                Alert(
-                    title: Text("Restore Settings"),
-                    message: Text("Would you like to reset all settings for this score type to their default values?"),
-                    primaryButton: .destructive(Text("Yes, Restore")) {
-                        if scoreType == 1 {
-                            countBySheet = false
-                            addAllByStr = "1"
-                        }
-                        else if scoreType == 2 {
-                            soundEnabled = true
-                            showStatus = false
-                            showFullCount = false
-                            showInningOver = true
-                        }
-                    },
-                    secondaryButton: .cancel(Text("No"))
-
-                )
-                
-                
-            }
-            Spacer()
-        }
-        
-        HStack {
-            Spacer()
-            Button( action: {
-                showRestoreAllSettingsAlert = true
-            }, label: {
-                Text("Restore All Settings")
-                Image(systemName: "arrow.trianglehead.2.counterclockwise")
-            })
-            .buttonStyle(PlainButtonStyle())
-            .alert(isPresented: $showRestoreAllSettingsAlert) {
-                Alert(
-                    title: Text("Restore All Settings"),
-                    message: Text("Would you like to reset all settings for this score type to their default values?"),
-                    primaryButton: .destructive(Text("Yes, Restore")) {
-                        if scoreType == 1 {
-                            countBySheet = false
-                            addAllByStr = "1"
-                        }
-                        else if scoreType == 2 {
-                            soundEnabled = true
-                            showStatus = false
-                            showFullCount = false
-                            showInningOver = true
-                        }
-                    },
-                    secondaryButton: .cancel(Text("No"))
-
-                )
-                
-                
-            }
-            Spacer()
-        }
-        
-        
-        HStack {
-            Spacer()
-            Button("Delete Everything 🗑️") {
-                delEverything = true
-            }
-            .foregroundColor(.red)
-            .alert(isPresented: $delEverything) {
-                Alert(
-                    title: Text("Reset Complete"),
-                    message: Text("All saved data has been cleared, and settings have been reset to their defaults."),
-                    dismissButton: .default(Text("OK")) {
-                        deleteEverything()
-                    }
-
-                )
-                
-                
-            }
-            Spacer()
-        }
-    }
-}
-
-
-
-struct Settings: View {
+struct SettingsView: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
     @AppStorage("showStatus") var showStatus: Bool = false
@@ -175,7 +67,7 @@ struct Settings: View {
                     Picker(selection: $scoreType, label: Text("Score Type")) {
                         Text("Custom").tag(1)
                         Text("Baseball").tag(2)
-                        Text("To Do").tag(3)
+                        Text("Walk").tag(3)
                     }
                 }
                 
@@ -186,7 +78,7 @@ struct Settings: View {
                         Toggle("All Sounds: \(soundEnabled ? "On" : "Off")", isOn: $soundEnabled)
                         
                         if !soundEnabled {
-                            NavigationLink(destination: UseSound()) {
+                            NavigationLink(destination: UseSoundSettingsView()) {
                                 Text("Manage Sounds")
                             }
                         }
@@ -283,7 +175,7 @@ struct Settings: View {
                             .border(addAllByStr != ".1" && addAllByStr != ".5" && addAllByStr != "1" && addAllByStr != "2" && addAllByStr != "5" && addAllByStr != "10" ? Color.blue : .clear)
                             .edgesIgnoringSafeArea(.all)
                             .sheet(isPresented: $countBySheet) {
-                                AddAllBy()
+                                AddAllByCustomCountSettingsView()
                             }
                             Spacer()
                         }
@@ -301,52 +193,20 @@ struct Settings: View {
                 
                 Section(header: Text("Advanced Settings")) {
                     VStack {
-                        NavigationLink(destination: AS_Menu()) {
+                        NavigationLink(destination: AdvancedSettingsView()) {
                             Text("Open")
                         }
                     }
                 }
                 
                 
-                restartSettings()
+                RestartSettingsView()
                 
             }
         }
     }
 }
 
-struct AddAllBy: View {
-    @Environment(\.presentationMode) var presentationMode
-    @Environment(\.colorScheme) var colorScheme
-    @State private var inputText = ""
-    @AppStorage("addAllByStr") var addAllByStr = ""
-    
-    var body: some View {
-        VStack {
-            Text("Count By:")
-            
-            HStack {
-                TextField("Add All By", text: $addAllByStr)
-                    .keyboardType(.decimalPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                Button(action: {
-                    self.addAllByStr.removeAll()
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                }
-                .foregroundColor(Color.red)
-            }
-            
-            Button("OK") {
-                self.presentationMode.wrappedValue.dismiss()
-            }
-        }
-        .foregroundColor(colorScheme == .dark ? .white : .black)
-        .padding()
-    }
-}
-
 #Preview {
-    Settings(soundEnabled: true)
+    SettingsView(soundEnabled: true)
 }

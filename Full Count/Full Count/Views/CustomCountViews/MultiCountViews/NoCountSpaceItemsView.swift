@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoItemsView: View {
+struct NoCountSpaceItemsView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State var animate: Bool = false
@@ -22,11 +22,11 @@ struct NoItemsView: View {
                 Text("Your count space is currently empty.")
                     .padding(.bottom, 20)
                 
-                NavigationLink(destination: AddView()) {
+                NavigationLink(destination: AddCountSpaceView()) {
                     Text("Start Counting")
                         .font(.headline)
                         .fontWeight(.semibold)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(colorScheme == .dark ? .black : .white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
                         .background(animate ? secondaryAccentColor : Color.accentColor)
@@ -67,7 +67,7 @@ struct NoItemsView: View {
 
 #Preview {
     NavigationView {
-        NoItemsView()
+        NoCountSpaceItemsView()
             .navigationTitle("Title")
     }
 }

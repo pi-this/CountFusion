@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UseSound: View {
+struct UseSoundSettingsView: View {
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
     @AppStorage("strikeSound") var strikeSound: Bool = true
     @AppStorage("foulBallSound") var foulBallSound: Bool = true
@@ -43,5 +43,5 @@ struct UseSound: View {
 }
 
 #Preview {
-    UseSound()
+    UseSoundSettingsView()
 }

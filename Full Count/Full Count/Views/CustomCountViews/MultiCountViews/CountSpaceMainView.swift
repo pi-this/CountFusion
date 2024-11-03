@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToDoListMainView: View {
+struct CountSpaceMainView: View {
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
     
     let item: ItemModel
@@ -15,10 +15,10 @@ struct ToDoListMainView: View {
     var body: some View {
         HStack {
             if insideAddedView {
-                InsideAddedView(item: item)
+                InsideCountSpaceView(item: item)
             }
             else {
-                ToDoList()
+                CountSpaceView()
                     .environmentObject(ListViewModel())
             }
         }
@@ -27,5 +27,5 @@ struct ToDoListMainView: View {
  
 #Preview {
     var item: ItemModel { .init(title: "Test Item", value: 0.0) }
-    ToDoListMainView(item: item)
+    CountSpaceMainView(item: item)
 }

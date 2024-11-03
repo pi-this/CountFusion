@@ -7,52 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B8C81A52CCF1EE000F08D24 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A42CCF1ED900F08D24 /* ListRowView.swift */; };
-		2B8C81A72CCF20D600F08D24 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A62CCF20D600F08D24 /* AddView.swift */; };
-		2B8C81AA2CCF237600F08D24 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A92CCF237600F08D24 /* ItemModel.swift */; };
-		2B8C81AD2CCF29D600F08D24 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81AC2CCF29D600F08D24 /* ListViewModel.swift */; };
+		2B8C81A52CCF1EE000F08D24 /* ListRowCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */; };
+		2B8C81A72CCF20D600F08D24 /* AddCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */; };
+		2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */; };
+		2B8C81AD2CCF29D600F08D24 /* CountSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81AC2CCF29D600F08D24 /* CountSpaceViewModel.swift */; };
 		2B9115612CCAF9D5005D95F3 /* Ball.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115602CCAF9D5005D95F3 /* Ball.wav */; };
 		2B9115632CCAF9E4005D95F3 /* FoulBall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115622CCAF9E4005D95F3 /* FoulBall.wav */; };
 		2B9115652CCB01B7005D95F3 /* Strike.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115642CCB01B7005D95F3 /* Strike.wav */; };
 		2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701722BF2F94F00C02353 /* Full_CountApp.swift */; };
 		2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701742BF2F94F00C02353 /* ContentView.swift */; };
-		2B9701772BF2F95100C02353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9701762BF2F95100C02353 /* Assets.xcassets */; };
-		2B97017A2BF2F95100C02353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9701792BF2F95100C02353 /* Preview Assets.xcassets */; };
-		2B9701812BF2F9F400C02353 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701802BF2F9F400C02353 /* Runs.swift */; };
-		2B9C1A842CD66E5700FD66C6 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A832CD66E5700FD66C6 /* NoItemsView.swift */; };
-		2B9C1A862CD67D2500FD66C6 /* SimPlainCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A852CD67D2500FD66C6 /* SimPlainCount.swift */; };
-		2BA3AD812CCEF89B00FF8ABC /* CountSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3AD802CCEF89B00FF8ABC /* CountSpace.swift */; };
-		2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E2142CB32FFD007778D2 /* TheCount.swift */; };
-		2BBB42062CCC0F7200B94E2B /* AS_Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* AS_Menu.swift */; };
-		2BCE549D2CB7082A00BAC065 /* UseSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE549C2CB7082A00BAC065 /* UseSound.swift */; };
-		2BDCB6BD2CB5C25A009674C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* Settings.swift */; };
-		2BF276432CD5506600D2A3A5 /* InsideAddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276422CD5506600D2A3A5 /* InsideAddedView.swift */; };
-		2BF276452CD550DB00D2A3A5 /* ToDoListMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* ToDoListMainView.swift */; };
+		2B9701812BF2F9F400C02353 /* BaseballRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701802BF2F9F400C02353 /* BaseballRunView.swift */; };
+		2B9A0E432CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */; };
+		2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */; };
+		2B9A0E492CD7F3BF00B8A03C /* DataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */; };
+		2B9A0E512CD7FA4E00B8A03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */; };
+		2B9C1A842CD66E5700FD66C6 /* NoCountSpaceItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */; };
+		2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */; };
+		2B9C1A8A2CD6A92700FD66C6 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A892CD6A92700FD66C6 /* StepView.swift */; };
+		2B9C1A8C2CD6A9E400FD66C6 /* StepMeterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */; };
+		2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */; };
+		2BA5E2152CB32FFD007778D2 /* BaseballTheCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E2142CB32FFD007778D2 /* BaseballTheCountView.swift */; };
+		2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */; };
+		2BCE549D2CB7082A00BAC065 /* UseSoundSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE549C2CB7082A00BAC065 /* UseSoundSettingsView.swift */; };
+		2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */; };
+		2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */; };
+		2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B8C81A42CCF1ED900F08D24 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
-		2B8C81A62CCF20D600F08D24 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
-		2B8C81A92CCF237600F08D24 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		2B8C81AC2CCF29D600F08D24 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowCountSpaceView.swift; sourceTree = "<group>"; };
+		2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountSpaceView.swift; sourceTree = "<group>"; };
+		2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceItemModel.swift; sourceTree = "<group>"; };
+		2B8C81AC2CCF29D600F08D24 /* CountSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceViewModel.swift; sourceTree = "<group>"; };
 		2B9115602CCAF9D5005D95F3 /* Ball.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ball.wav; sourceTree = "<group>"; };
 		2B9115622CCAF9E4005D95F3 /* FoulBall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FoulBall.wav; sourceTree = "<group>"; };
 		2B9115642CCB01B7005D95F3 /* Strike.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Strike.wav; sourceTree = "<group>"; };
 		2B97016F2BF2F94F00C02353 /* Full Count.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Full Count.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9701722BF2F94F00C02353 /* Full_CountApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Full_CountApp.swift; sourceTree = "<group>"; };
 		2B9701742BF2F94F00C02353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2B9701762BF2F95100C02353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2B9701792BF2F95100C02353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2B9701802BF2F9F400C02353 /* Runs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runs.swift; sourceTree = "<group>"; };
-		2B9C1A832CD66E5700FD66C6 /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
-		2B9C1A852CD67D2500FD66C6 /* SimPlainCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimPlainCount.swift; sourceTree = "<group>"; };
-		2BA3AD802CCEF89B00FF8ABC /* CountSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpace.swift; sourceTree = "<group>"; };
-		2BA5E2142CB32FFD007778D2 /* TheCount.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TheCount.swift; sourceTree = "<group>"; tabWidth = 4; };
-		2BBB42052CCC0F7100B94E2B /* AS_Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_Menu.swift; sourceTree = "<group>"; };
-		2BCE549C2CB7082A00BAC065 /* UseSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseSound.swift; sourceTree = "<group>"; };
-		2BDCB6BC2CB5C25A009674C1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		2BF276422CD5506600D2A3A5 /* InsideAddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAddedView.swift; sourceTree = "<group>"; };
-		2BF276442CD550DB00D2A3A5 /* ToDoListMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListMainView.swift; sourceTree = "<group>"; };
+		2B9701802BF2F9F400C02353 /* BaseballRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballRunView.swift; sourceTree = "<group>"; };
+		2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAllByCustomCountSettingsView.swift; sourceTree = "<group>"; };
+		2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartSettingsView.swift; sourceTree = "<group>"; };
+		2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtility.swift; sourceTree = "<group>"; };
+		2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCountSpaceItemsView.swift; sourceTree = "<group>"; };
+		2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCountView.swift; sourceTree = "<group>"; };
+		2B9C1A892CD6A92700FD66C6 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
+		2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepMeterService.swift; sourceTree = "<group>"; };
+		2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceView.swift; sourceTree = "<group>"; };
+		2BA5E2142CB32FFD007778D2 /* BaseballTheCountView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = BaseballTheCountView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
+		2BCE549C2CB7082A00BAC065 /* UseSoundSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseSoundSettingsView.swift; sourceTree = "<group>"; };
+		2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCountSpaceView.swift; sourceTree = "<group>"; };
+		2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,57 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B8C81A32CCF1E7F00F08D24 /* ToDo */ = {
-			isa = PBXGroup;
-			children = (
-				2B8C81AB2CCF29B200F08D24 /* ViewModels */,
-				2B8C81A82CCF235700F08D24 /* Models */,
-				2B8C81A42CCF1ED900F08D24 /* ListRowView.swift */,
-				2BA3AD802CCEF89B00FF8ABC /* CountSpace.swift */,
-				2BF276442CD550DB00D2A3A5 /* ToDoListMainView.swift */,
-				2B8C81A62CCF20D600F08D24 /* AddView.swift */,
-				2BF276422CD5506600D2A3A5 /* InsideAddedView.swift */,
-				2B9C1A832CD66E5700FD66C6 /* NoItemsView.swift */,
-				2B9C1A852CD67D2500FD66C6 /* SimPlainCount.swift */,
-			);
-			path = ToDo;
-			sourceTree = "<group>";
-		};
-		2B8C81A82CCF235700F08D24 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2B8C81A92CCF237600F08D24 /* ItemModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2B8C81AB2CCF29B200F08D24 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				2B8C81AC2CCF29D600F08D24 /* ListViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		2B9115692CCB40D7005D95F3 /* Baseball */ = {
-			isa = PBXGroup;
-			children = (
-				2B9701802BF2F9F400C02353 /* Runs.swift */,
-				2BA5E2142CB32FFD007778D2 /* TheCount.swift */,
-			);
-			path = Baseball;
-			sourceTree = "<group>";
-		};
-		2B91156A2CCB414A005D95F3 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				2BDCB6BC2CB5C25A009674C1 /* Settings.swift */,
-				2BCE549C2CB7082A00BAC065 /* UseSound.swift */,
-				2BBB42052CCC0F7100B94E2B /* AS_Menu.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		2B91156B2CCB4163005D95F3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,15 +82,6 @@
 				2B9115642CCB01B7005D95F3 /* Strike.wav */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		2B91156E2CCB41FA005D95F3 /* Score Types */ = {
-			isa = PBXGroup;
-			children = (
-				2B8C81A32CCF1E7F00F08D24 /* ToDo */,
-				2B9115692CCB40D7005D95F3 /* Baseball */,
-			);
-			path = "Score Types";
 			sourceTree = "<group>";
 		};
 		2B9701662BF2F94F00C02353 = {
@@ -155,23 +103,135 @@
 		2B9701712BF2F94F00C02353 /* Full Count */ = {
 			isa = PBXGroup;
 			children = (
-				2B91156B2CCB4163005D95F3 /* Sounds */,
-				2B9701722BF2F94F00C02353 /* Full_CountApp.swift */,
-				2B9701742BF2F94F00C02353 /* ContentView.swift */,
-				2B91156A2CCB414A005D95F3 /* Settings */,
-				2B91156E2CCB41FA005D95F3 /* Score Types */,
-				2B9701762BF2F95100C02353 /* Assets.xcassets */,
-				2B9701782BF2F95100C02353 /* Preview Content */,
+				2B9A0E292CD7E52100B8A03C /* Application */,
+				2B9A0E2A2CD7E53500B8A03C /* Models */,
+				2B9A0E2B2CD7E54100B8A03C /* Views */,
+				2B9A0E2C2CD7E54700B8A03C /* ViewModels */,
+				2B9A0E2D2CD7E55800B8A03C /* Services */,
+				2B9A0E2E2CD7E55E00B8A03C /* Utilities */,
+				2B9A0E2F2CD7E56500B8A03C /* Resources */,
 			);
 			path = "Full Count";
 			sourceTree = "<group>";
 		};
-		2B9701782BF2F95100C02353 /* Preview Content */ = {
+		2B9A0E292CD7E52100B8A03C /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				2B9701792BF2F95100C02353 /* Preview Assets.xcassets */,
+				2B9701722BF2F94F00C02353 /* Full_CountApp.swift */,
 			);
-			path = "Preview Content";
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2B9A0E2A2CD7E53500B8A03C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B9A0E2B2CD7E54100B8A03C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B9701742BF2F94F00C02353 /* ContentView.swift */,
+				2B9A0E382CD7EB6C00B8A03C /* CustomCountViews */,
+				2B9A0E3A2CD7EC4900B8A03C /* BaseballCountViews */,
+				2B9A0E392CD7EBF800B8A03C /* WalkCountViews */,
+				2B9A0E412CD7ED9B00B8A03C /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B9A0E2C2CD7E54700B8A03C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C81AC2CCF29D600F08D24 /* CountSpaceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B9A0E2D2CD7E55800B8A03C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2B9A0E2E2CD7E55E00B8A03C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2B9A0E2F2CD7E56500B8A03C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B91156B2CCB4163005D95F3 /* Sounds */,
+				2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2B9A0E362CD7EB3100B8A03C /* MultiCountViews */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */,
+				2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */,
+				2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */,
+				2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */,
+				2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */,
+				2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */,
+			);
+			path = MultiCountViews;
+			sourceTree = "<group>";
+		};
+		2B9A0E372CD7EB6000B8A03C /* SimpleCountView */ = {
+			isa = PBXGroup;
+			children = (
+				2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */,
+			);
+			path = SimpleCountView;
+			sourceTree = "<group>";
+		};
+		2B9A0E382CD7EB6C00B8A03C /* CustomCountViews */ = {
+			isa = PBXGroup;
+			children = (
+				2B9A0E372CD7EB6000B8A03C /* SimpleCountView */,
+				2B9A0E362CD7EB3100B8A03C /* MultiCountViews */,
+			);
+			path = CustomCountViews;
+			sourceTree = "<group>";
+		};
+		2B9A0E392CD7EBF800B8A03C /* WalkCountViews */ = {
+			isa = PBXGroup;
+			children = (
+				2B9C1A892CD6A92700FD66C6 /* StepView.swift */,
+			);
+			path = WalkCountViews;
+			sourceTree = "<group>";
+		};
+		2B9A0E3A2CD7EC4900B8A03C /* BaseballCountViews */ = {
+			isa = PBXGroup;
+			children = (
+				2B9701802BF2F9F400C02353 /* BaseballRunView.swift */,
+				2BA5E2142CB32FFD007778D2 /* BaseballTheCountView.swift */,
+			);
+			path = BaseballCountViews;
+			sourceTree = "<group>";
+		};
+		2B9A0E412CD7ED9B00B8A03C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */,
+				2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */,
+				2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */,
+				2BCE549C2CB7082A00BAC065 /* UseSoundSettingsView.swift */,
+				2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +292,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B97017A2BF2F95100C02353 /* Preview Assets.xcassets in Resources */,
 				2B9115632CCAF9E4005D95F3 /* FoulBall.wav in Resources */,
 				2B9115652CCB01B7005D95F3 /* Strike.wav in Resources */,
-				2B9701772BF2F95100C02353 /* Assets.xcassets in Resources */,
+				2B9A0E512CD7FA4E00B8A03C /* Assets.xcassets in Resources */,
 				2B9115612CCAF9D5005D95F3 /* Ball.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,21 +306,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF276452CD550DB00D2A3A5 /* ToDoListMainView.swift in Sources */,
-				2BBB42062CCC0F7200B94E2B /* AS_Menu.swift in Sources */,
-				2B8C81AD2CCF29D600F08D24 /* ListViewModel.swift in Sources */,
-				2B8C81AA2CCF237600F08D24 /* ItemModel.swift in Sources */,
-				2B9C1A862CD67D2500FD66C6 /* SimPlainCount.swift in Sources */,
-				2BDCB6BD2CB5C25A009674C1 /* Settings.swift in Sources */,
+				2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */,
+				2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */,
+				2B8C81AD2CCF29D600F08D24 /* CountSpaceViewModel.swift in Sources */,
+				2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */,
+				2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */,
+				2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */,
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
-				2BF276432CD5506600D2A3A5 /* InsideAddedView.swift in Sources */,
-				2BA5E2152CB32FFD007778D2 /* TheCount.swift in Sources */,
-				2B9C1A842CD66E5700FD66C6 /* NoItemsView.swift in Sources */,
-				2BCE549D2CB7082A00BAC065 /* UseSound.swift in Sources */,
-				2B8C81A52CCF1EE000F08D24 /* ListRowView.swift in Sources */,
-				2B8C81A72CCF20D600F08D24 /* AddView.swift in Sources */,
-				2BA3AD812CCEF89B00FF8ABC /* CountSpace.swift in Sources */,
-				2B9701812BF2F9F400C02353 /* Runs.swift in Sources */,
+				2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */,
+				2BA5E2152CB32FFD007778D2 /* BaseballTheCountView.swift in Sources */,
+				2B9C1A8C2CD6A9E400FD66C6 /* StepMeterService.swift in Sources */,
+				2B9C1A842CD66E5700FD66C6 /* NoCountSpaceItemsView.swift in Sources */,
+				2BCE549D2CB7082A00BAC065 /* UseSoundSettingsView.swift in Sources */,
+				2B8C81A52CCF1EE000F08D24 /* ListRowCountSpaceView.swift in Sources */,
+				2B9A0E432CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift in Sources */,
+				2B8C81A72CCF20D600F08D24 /* AddCountSpaceView.swift in Sources */,
+				2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */,
+				2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */,
+				2B9A0E492CD7F3BF00B8A03C /* DataUtility.swift in Sources */,
+				2B9701812BF2F9F400C02353 /* BaseballRunView.swift in Sources */,
+				2B9C1A8A2CD6A92700FD66C6 /* StepView.swift in Sources */,
 				2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +467,7 @@
 				INFOPLIST_FILE = "Full-Count-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to motion data to count your steps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,6 +509,7 @@
 				INFOPLIST_FILE = "Full-Count-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to motion data to count your steps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

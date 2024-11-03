@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct AddView: View {
+struct AddCountSpaceView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var listViewModel: ListViewModel
     @State var textFieldText: String = ""
@@ -30,7 +31,7 @@ struct AddView: View {
                         saveButtonPressed()
                     }, label: {
                         Text("Save".uppercased())
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
                             .frame(height: 55)
                             .font(.headline)
                             .frame(maxWidth: .infinity)
@@ -81,6 +82,6 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView()
+    AddCountSpaceView()
         .environmentObject(ListViewModel())
 }

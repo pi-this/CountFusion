@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListRowView: View {
+struct ListRowCountSpaceView: View {
 
     let item: ItemModel
     
@@ -26,5 +26,5 @@ struct ListRowView: View {
 
 #Preview {
     var item: ItemModel { .init(title: "Test Item", value: 0.0) }
-    ListRowView(item: item)
+    ListRowCountSpaceView(item: item)
 }

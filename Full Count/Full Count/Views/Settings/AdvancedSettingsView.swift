@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AS_Menu: View {
+struct AdvancedSettingsView: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("modeWanted") var modeWanted: String = ""
     @AppStorage("modeTurned") var modeTurned: Bool = false
@@ -69,5 +69,5 @@ struct AS_Menu: View {
 }
 
 #Preview {
-    AS_Menu()
+    AdvancedSettingsView()
 }
