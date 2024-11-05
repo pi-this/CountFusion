@@ -63,36 +63,6 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 
-                Section(header: Text("Score")) {
-                    Picker(selection: $scoreType, label: Text("Score Type")) {
-                        Text("Custom").tag(1)
-                        Text("Baseball").tag(2)
-                        Text("Walk").tag(3)
-                    }
-                }
-                
-                
-                
-                if scoreType == 2 {
-                    Section(header: Text("Sound")) {
-                        Toggle("All Sounds: \(soundEnabled ? "On" : "Off")", isOn: $soundEnabled)
-                        
-                        if !soundEnabled {
-                            NavigationLink(destination: UseSoundSettingsView()) {
-                                Text("Manage Sounds")
-                            }
-                        }
-                    }
-                    Section(header: Text("Status")) {
-                        Toggle("Batter Status: \(showStatus ? "Show" : "Hide")", isOn: $showStatus)
-                        Toggle("Full Count Alert: \(showStatus ? "Show" : "Hide")", isOn: $showFullCount)
-                        Toggle("Inning Over Alert: \(showStatus ? "Show" : "Hide")", isOn: $showInningOver)
-                    }
-                }
-                
-                
-                
-                else if scoreType == 1 {
                     Section(header: Text("Count")) {
                         
                         VStack {
@@ -103,92 +73,10 @@ struct SettingsView: View {
                             }
                         }
                         
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                addAllByStr = ".1"
-                            }) {
-                                Text(".1")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr == ".1" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            
-                            Button(action: {
-                                addAllByStr = ".5"
-                            }) {
-                                Text(".5")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr == ".5" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            Button(action: {
-                                addAllByStr = "1"
-                            }) {
-                                Text("1")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr == "1" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            Button(action: {
-                                addAllByStr = "2"
-                            }) {
-                                Text("2")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr == "2" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            Button(action: {
-                                addAllByStr = "5"
-                            }) {
-                                Text("5")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr == "5" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            Button(action: {
-                                addAllByStr = "10"
-                            }) {
-                                Text("10")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr == "10" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            Spacer()
-                        }
+                        CountByView()
                         
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                countBySheet = true
-                            }) {
-                                Text("other")
-                            }
-                            .buttonStyle(.bordered)
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .border(addAllByStr != ".1" && addAllByStr != ".5" && addAllByStr != "1" && addAllByStr != "2" && addAllByStr != "5" && addAllByStr != "10" ? Color.blue : .clear)
-                            .edgesIgnoringSafeArea(.all)
-                            .sheet(isPresented: $countBySheet) {
-                                AddAllByCustomCountSettingsView()
-                            }
-                            Spacer()
-                        }
                     }
-                    
-                }
-                
-                
-               else if scoreType == 3 {
-                   Section(header: Text("Questions")) {
-                       Toggle("Do It? (\(soundEnabled ? "On" : "Off"))", isOn: $soundEnabled)
-                   }
-                }
+
                 
                 
                 Section(header: Text("Advanced Settings")) {

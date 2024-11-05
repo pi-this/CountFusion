@@ -5,6 +5,13 @@
 //  Created by Wesley Chastain on 5/10/24.
 //
 /*
+ 
+ !!!! The crash is just a #Preview issue not app issue. !!!!
+ Fix in preview click the diagnostics button to see the issue.
+ 
+ 
+ 
+ 
  Next steps:
  watch video more. (// I left off: https://youtu.be/nwpmWu1SP1k?t=1228)
 1. Find out how to do the save the list model to app storage. Do that.
@@ -83,25 +90,19 @@ struct ContentView: View {
                         
         }
         
-        
-        
-        // 1 is custom
-        // 2 is baseball
-        // 3 is To Do
-        
-        if scoreType == 1 && !isVisible {
+        if !isVisible {
             ZStack {
                 TabView(selection: $tabView) {
                     SimpleCountView()
                         .tabItem {
                             Image(systemName: "numbers")
-                            Text("Simple Count") 
+                            Text("Simple Count")
                                 .onSubmit {
                                     tabView = 1
                                 }
                         }
                         .tag(1)
-                    var item: ItemModel { .init(title: "Test Item", value: 0.0) }
+                    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
                     CountSpaceMainView(item: item)
                         .tabItem {
                             Image(systemName: "list.number")
@@ -124,67 +125,7 @@ struct ContentView: View {
             }
             
         }
-         
-        else if scoreType == 2 && !isVisible {
-            ZStack {
-                TabView(selection: $tabView) {
-                    BaseballRunView()
-                        .tabItem {
-                            Image(systemName: "figure.run")
-                            Text("Runs")
-                                .onSubmit {
-                                    tabView = 1
-                                }
-                        }
-                        .tag(1)
-                    TheCount()
-                        .tabItem {
-                            Image(systemName: "baseball")
-                            Text("Count")
-                                .onSubmit {
-                                    tabView = 2
-                                }
-                        }
-                        .tag(2)
-                    SettingsView()
-                        .tabItem {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                                .onSubmit {
-                                    tabView = 3
-                                }
-                        }
-                        .tag(3)
-                }
-            }
-        }
-        
-        
-        else if scoreType == 3 && !isVisible {
-            ZStack {
-                TabView(selection: $tabView) {
-                    StepView()
-                        .tabItem {
-                            Image(systemName: "figure.walk")
-                            Text("Step Count")
-                                .onSubmit {
-                                    tabView = 1
-                                }
-                        }
-                        .environmentObject(listViewModel)
-                        .tag(1)
-                    SettingsView()
-                        .tabItem {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                                .onSubmit {
-                                    tabView = 3
-                                }
-                        }
-                        .tag(3)
-                }
-            }
-        }
+
         }
     }
 

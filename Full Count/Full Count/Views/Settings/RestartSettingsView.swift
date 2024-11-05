@@ -20,40 +20,13 @@ struct RestartSettingsView: View {
     @AppStorage("showRestoreSettingsAlert") var showRestoreSettingsAlert: Bool = false
     @AppStorage("showRestoreAllSettingsAlert") var showRestoreAllSettingsAlert: Bool = false
     
+    @EnvironmentObject var listViewModel: ListViewModel
+    
+    // red zone vars
+    @State private var showDeleteAlert = false
+    @State private var showAuthenticationError = false
+    
     var body: some View {
-        HStack {
-            Spacer()
-            Button( action: {
-                showRestoreSettingsAlert = true
-            }, label: {
-                Text("Restore Score Settings")
-                Image(systemName: "arrow.trianglehead.2.counterclockwise")
-            })
-            .buttonStyle(PlainButtonStyle())
-            .alert(isPresented: $showRestoreSettingsAlert) {
-                Alert(
-                    title: Text("Restore Settings"),
-                    message: Text("Would you like to reset all settings for this score type to their default values?"),
-                    primaryButton: .destructive(Text("Yes, Restore")) {
-                        if scoreType == 1 {
-                            countBySheet = false
-                            addAllByStr = "1"
-                        }
-                        else if scoreType == 2 {
-                            soundEnabled = true
-                            showStatus = false
-                            showFullCount = false
-                            showInningOver = true
-                        }
-                    },
-                    secondaryButton: .cancel(Text("No"))
-
-                )
-                
-                
-            }
-            Spacer()
-        }
         
         HStack {
             Spacer()
@@ -67,18 +40,10 @@ struct RestartSettingsView: View {
             .alert(isPresented: $showRestoreAllSettingsAlert) {
                 Alert(
                     title: Text("Restore All Settings"),
-                    message: Text("Would you like to reset all settings for this score type to their default values?"),
+                    message: Text("Would you like to reset all settings to thier default values?"),
                     primaryButton: .destructive(Text("Yes, Restore")) {
-                        if scoreType == 1 {
-                            countBySheet = false
-                            addAllByStr = "1"
-                        }
-                        else if scoreType == 2 {
-                            soundEnabled = true
-                            showStatus = false
-                            showFullCount = false
-                            showInningOver = true
-                        }
+                        countBySheet = false
+                        addAllByStr = "1"
                     },
                     secondaryButton: .cancel(Text("No"))
 
@@ -93,20 +58,23 @@ struct RestartSettingsView: View {
         HStack {
             Spacer()
             Button("Delete Everything 🗑️") {
-                delEverything = true
+                RedZoneUtility.shared.authenticateUser { success in
+                    if success {
+                        DataUtility.shared.deleteEverything()
+                        
+                        listViewModel.items.removeAll()
+                    } else {
+                        showAuthenticationError = true
+                    }
+                }
             }
             .foregroundColor(.red)
-            .alert(isPresented: $delEverything) {
+            .alert(isPresented: $showAuthenticationError) {
                 Alert(
-                    title: Text("Reset Complete"),
-                    message: Text("All saved data has been cleared, and settings have been reset to their defaults."),
-                    dismissButton: .default(Text("OK")) {
-                        deleteEverything()
-                    }
-
+                    title: Text("Authentication Failed"),
+                    message: Text("Unable to authenticate. Please try again."),
+                    dismissButton: .default(Text("OK"))
                 )
-                
-                
             }
             Spacer()
         }

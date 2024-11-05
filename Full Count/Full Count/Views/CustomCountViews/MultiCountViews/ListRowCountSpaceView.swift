@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListRowCountSpaceView: View {
 
-    let item: ItemModel
+    let item: CountSpaceItemModel
     
     var body: some View {
         HStack {
@@ -25,6 +25,6 @@ struct ListRowCountSpaceView: View {
 }
 
 #Preview {
-    var item: ItemModel { .init(title: "Test Item", value: 0.0) }
+    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
     ListRowCountSpaceView(item: item)
 }

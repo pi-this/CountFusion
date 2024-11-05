@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct Full_CountApp: App {
     @AppStorage("modeWanted") var modeWanted: String = ""
+    @StateObject private var listViewModel = ListViewModel()
     
     init() {
         // Enforce mode wanted in the app
@@ -24,6 +25,7 @@ struct Full_CountApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(listViewModel)
         }
     }
 }

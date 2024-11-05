@@ -8,10 +8,10 @@
 import Foundation
 
 // this is an immutable struct
-struct ItemModel: Identifiable, Codable {
+struct CountSpaceItemModel: Identifiable, Codable {
     let id: String
-    let title: String
-    let value: Double
+    var title: String
+    var value: Double
     // keep all these lets so that there are no accedents to making the date here different than it is any place else. Making it so they cannot be changed on the fly. Only be changed through the function of updateCompleation to make code clean and consise.
     
     init(id: String = UUID().uuidString, title: String, value: Double) {
@@ -20,12 +20,20 @@ struct ItemModel: Identifiable, Codable {
         self.value = value
     }
     
-    func addToValue() -> ItemModel {
-        return ItemModel(id: id, title: title, value: value+1)
+    func addToValue() -> CountSpaceItemModel {
+        return CountSpaceItemModel(id: id, title: title, value: value+1)
     }
     
-    func subtractToValue() -> ItemModel {
-        return ItemModel(id: id, title: title, value: value-1)
+    mutating func addToValue(amount: Double) {
+        self.value += amount
+    }
+    
+    mutating func updateTitle(newTitle: String) {
+        self.title = newTitle
+    }
+    
+    func subtractToValue() -> CountSpaceItemModel {
+        return CountSpaceItemModel(id: id, title: title, value: value-1)
     }
 }
 

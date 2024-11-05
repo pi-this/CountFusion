@@ -66,11 +66,6 @@ struct AddCountSpaceView: View {
             alertTitle = "Oops! That title is already taken. 🫤"
             return false
         }
-        else if textFieldText.count > 15 {
-            showAlert.toggle()
-            alertTitle = "The title is too long! Please keep it under 15 characters."
-            return false
-        }
         else {
            return true
         }

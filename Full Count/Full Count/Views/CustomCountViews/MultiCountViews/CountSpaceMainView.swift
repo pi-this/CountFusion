@@ -10,7 +10,7 @@ import SwiftUI
 struct CountSpaceMainView: View {
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
     
-    let item: ItemModel
+    let item: CountSpaceItemModel
     
     var body: some View {
         HStack {
@@ -26,6 +26,7 @@ struct CountSpaceMainView: View {
 }
  
 #Preview {
-    var item: ItemModel { .init(title: "Test Item", value: 0.0) }
+    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
     CountSpaceMainView(item: item)
+        .environmentObject(ListViewModel())
 }

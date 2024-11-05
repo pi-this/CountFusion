@@ -4,12 +4,12 @@
 //
 //  Created by Wesley Chastain on 10/27/24.
 //
-
+  
 import Foundation
 
 
 class ListViewModel: ObservableObject {
-    @Published var items: [ItemModel] = [] {
+    @Published var items: [CountSpaceItemModel] = [] {
         didSet {
             saveItem()
         } // any time we change/effect the array this gets called
@@ -24,7 +24,7 @@ class ListViewModel: ObservableObject {
     func getItems() {
         guard
             let data = UserDefaults.standard.data(forKey: itemsKey),
-            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+            let savedItems = try? JSONDecoder().decode([CountSpaceItemModel].self, from: data)
         else { return } // guard data because it could be an empty list model (optional)
         
         self.items = savedItems
@@ -32,6 +32,10 @@ class ListViewModel: ObservableObject {
     
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
+    }
+    
+    func deleteItem(index: Int) {
+        items.remove(at: index)
     }
     
     
@@ -45,17 +49,25 @@ class ListViewModel: ObservableObject {
     }
     
     func addItem(title: String) {
-        let newItem = ItemModel(title: title, value: 0.0)
+        let newItem = CountSpaceItemModel(title: title, value: 0.0)
         items.append(newItem)
     }
     
-    func updateItemAdd(item: ItemModel) {
+    func updateItemAdd(item: CountSpaceItemModel) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item.addToValue()
         }
     }
     
-    func updateItemSubtract(item: ItemModel) {
+    func updateItemTitle(currentTitle: String, newTitle: String) { if let index = items.firstIndex(where: { $0.title == currentTitle }) { items[index].updateTitle(newTitle: newTitle) } }
+    
+    func updateItemAdd(title: String, amount: Double) {
+            if let index = items.firstIndex(where: { $0.title == title }) {
+                items[index].addToValue(amount: amount)
+            }
+        }
+    
+    func updateItemSubtract(item: CountSpaceItemModel) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item.subtractToValue()
         }

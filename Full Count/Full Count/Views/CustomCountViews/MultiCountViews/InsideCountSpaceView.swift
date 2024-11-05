@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct InsideCountSpaceView: View {
-    @State var title: String = "Hello, World!"
-    @State var value: String = ""
+    @State var newTitle: String = ""
+    @State var valueAdd: String = ""
+    @State var valueSubtract: String = ""
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
     @AppStorage("currentTitle") var currentTitle: String = ""
     @AppStorage("currentValue") var currentValue: Double = 0
     
-    let item: ItemModel
+    @State var alertTitle: String = ""
+    @State var showAlert: Bool = false
+    
+    var item: CountSpaceItemModel
+    @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
         
@@ -29,29 +34,78 @@ struct InsideCountSpaceView: View {
             
             Text("\(currentTitle)")
                 .font(.largeTitle)
+                .padding()
             
             
             Text("\(formatNumber(currentValue))")
                 .font(.title)
+                .padding()
+            
             
             HStack {
-                // use this for future addition of specific amounts
-                Spacer()
-                TextField("Add a Specific Amount", text: $value)
+                // use this for subtraction of specific amounts
+                Spacers(amount: 3)
+                TextField("Change the display name", text: $newTitle)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
-                Spacer()
+                Button("📝") {
+                    if textIsAppropriate() {
+                        listViewModel.updateItemTitle(currentTitle: currentTitle, newTitle: newTitle)
+                        insideAddedView = false
+                    }
+                }
+                .font(.title)
+                .buttonStyle(.bordered)
+                .foregroundColor(.blue)
+                .edgesIgnoringSafeArea(.all)
+                .border(Color.blue)
+                Spacers(amount: 7)
+            }
+            
+            
+            HStack {
+                // use this for addition of specific amounts
+                Spacers(amount: 3)
+                TextField("Add a Specific Amount", text: $valueAdd)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .multilineTextAlignment(.center)
+                    .keyboardType(.decimalPad)
+                Button("+") {
+                    if let doubleValue = Double(valueAdd) {
+                        listViewModel.updateItemAdd(title: currentTitle, amount: doubleValue)
+                        insideAddedView = false
+                    }
+                    
+                }
+                .font(.title)
+                .buttonStyle(.bordered)
+                .foregroundColor(.green)
+                .edgesIgnoringSafeArea(.all)
+                .border(Color.green)
+                Spacers(amount: 7)
             }
             
             HStack {
-                // use this for future subtraction of specific amounts
-                Spacer()
-                TextField("Subtract a Specific Amount", text: $value)
+                // use this for subtraction of specific amounts
+                Spacers(amount: 3)
+                TextField("Subtract a Specific Amount", text: $valueSubtract)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
-                Spacer()
+                    .keyboardType(.decimalPad)
+                Button("-") {
+                    if let doubleValue = Double(valueSubtract) {
+                        listViewModel.updateItemAdd(title: currentTitle, amount: -doubleValue)
+                        insideAddedView = false
+                    }
+                }
+                .font(.title)
+                .buttonStyle(.bordered)
+                .foregroundColor(.red)
+                .edgesIgnoringSafeArea(.all)
+                .border(Color.red)
+                Spacers(amount: 7)
             }
-            
+  
             
             
             Spacers(amount: 3)
@@ -62,6 +116,21 @@ struct InsideCountSpaceView: View {
         
         
         
+    }
+    
+    func textIsAppropriate() -> Bool {
+        if newTitle.trimmingCharacters(in: .whitespaces).isEmpty {
+            showAlert.toggle()
+            alertTitle = "Oops! You forgot to type something. 📝"
+            return false
+        } else if listViewModel.doesTitleExist(newTitle.trimmingCharacters(in: .whitespaces)){
+            showAlert.toggle()
+            alertTitle = "Oops! That title is already taken. 🫤"
+            return false
+        }
+        else {
+           return true
+        }
     }
     
     func formatNumber(_ number: Double) -> String {
@@ -85,6 +154,6 @@ struct Spacers: View {
 }
 
 #Preview {
-    var item: ItemModel { .init(title: "Test Item", value: 0.0) }
+    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
     InsideCountSpaceView(item: item)
 }

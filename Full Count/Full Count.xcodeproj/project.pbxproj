@@ -16,19 +16,18 @@
 		2B9115652CCB01B7005D95F3 /* Strike.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B9115642CCB01B7005D95F3 /* Strike.wav */; };
 		2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701722BF2F94F00C02353 /* Full_CountApp.swift */; };
 		2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701742BF2F94F00C02353 /* ContentView.swift */; };
-		2B9701812BF2F9F400C02353 /* BaseballRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701802BF2F9F400C02353 /* BaseballRunView.swift */; };
 		2B9A0E432CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */; };
 		2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */; };
 		2B9A0E492CD7F3BF00B8A03C /* DataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */; };
 		2B9A0E512CD7FA4E00B8A03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */; };
 		2B9C1A842CD66E5700FD66C6 /* NoCountSpaceItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */; };
 		2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */; };
-		2B9C1A8A2CD6A92700FD66C6 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A892CD6A92700FD66C6 /* StepView.swift */; };
 		2B9C1A8C2CD6A9E400FD66C6 /* StepMeterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */; };
 		2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */; };
-		2BA5E2152CB32FFD007778D2 /* BaseballTheCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA5E2142CB32FFD007778D2 /* BaseballTheCountView.swift */; };
+		2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA42F932CD9BD46002EC0E8 /* CountByView.swift */; };
+		2BA42F962CD9C051002EC0E8 /* RedZoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA42F952CD9C051002EC0E8 /* RedZoneUtility.swift */; };
+		2BAC913D2CD9D1C00004C9BC /* ListErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */; };
 		2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */; };
-		2BCE549D2CB7082A00BAC065 /* UseSoundSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCE549C2CB7082A00BAC065 /* UseSoundSettingsView.swift */; };
 		2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */; };
 		2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */; };
 		2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */; };
@@ -45,19 +44,18 @@
 		2B97016F2BF2F94F00C02353 /* Full Count.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Full Count.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9701722BF2F94F00C02353 /* Full_CountApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Full_CountApp.swift; sourceTree = "<group>"; };
 		2B9701742BF2F94F00C02353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2B9701802BF2F9F400C02353 /* BaseballRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballRunView.swift; sourceTree = "<group>"; };
 		2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAllByCustomCountSettingsView.swift; sourceTree = "<group>"; };
 		2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartSettingsView.swift; sourceTree = "<group>"; };
 		2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtility.swift; sourceTree = "<group>"; };
 		2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCountSpaceItemsView.swift; sourceTree = "<group>"; };
 		2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCountView.swift; sourceTree = "<group>"; };
-		2B9C1A892CD6A92700FD66C6 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepMeterService.swift; sourceTree = "<group>"; };
 		2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceView.swift; sourceTree = "<group>"; };
-		2BA5E2142CB32FFD007778D2 /* BaseballTheCountView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = BaseballTheCountView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		2BA42F932CD9BD46002EC0E8 /* CountByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountByView.swift; sourceTree = "<group>"; };
+		2BA42F952CD9C051002EC0E8 /* RedZoneUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedZoneUtility.swift; sourceTree = "<group>"; };
+		2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListErrorModel.swift; sourceTree = "<group>"; };
 		2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
-		2BCE549C2CB7082A00BAC065 /* UseSoundSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseSoundSettingsView.swift; sourceTree = "<group>"; };
 		2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCountSpaceView.swift; sourceTree = "<group>"; };
 		2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceMainView.swift; sourceTree = "<group>"; };
@@ -125,6 +123,7 @@
 		2B9A0E2A2CD7E53500B8A03C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */,
 				2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */,
 			);
 			path = Models;
@@ -135,8 +134,6 @@
 			children = (
 				2B9701742BF2F94F00C02353 /* ContentView.swift */,
 				2B9A0E382CD7EB6C00B8A03C /* CustomCountViews */,
-				2B9A0E3A2CD7EC4900B8A03C /* BaseballCountViews */,
-				2B9A0E392CD7EBF800B8A03C /* WalkCountViews */,
 				2B9A0E412CD7ED9B00B8A03C /* Settings */,
 			);
 			path = Views;
@@ -161,6 +158,7 @@
 		2B9A0E2E2CD7E55E00B8A03C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2BA42F952CD9C051002EC0E8 /* RedZoneUtility.swift */,
 				2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */,
 			);
 			path = Utilities;
@@ -205,31 +203,14 @@
 			path = CustomCountViews;
 			sourceTree = "<group>";
 		};
-		2B9A0E392CD7EBF800B8A03C /* WalkCountViews */ = {
-			isa = PBXGroup;
-			children = (
-				2B9C1A892CD6A92700FD66C6 /* StepView.swift */,
-			);
-			path = WalkCountViews;
-			sourceTree = "<group>";
-		};
-		2B9A0E3A2CD7EC4900B8A03C /* BaseballCountViews */ = {
-			isa = PBXGroup;
-			children = (
-				2B9701802BF2F9F400C02353 /* BaseballRunView.swift */,
-				2BA5E2142CB32FFD007778D2 /* BaseballTheCountView.swift */,
-			);
-			path = BaseballCountViews;
-			sourceTree = "<group>";
-		};
 		2B9A0E412CD7ED9B00B8A03C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */,
 				2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */,
 				2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */,
-				2BCE549C2CB7082A00BAC065 /* UseSoundSettingsView.swift */,
 				2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */,
+				2BA42F932CD9BD46002EC0E8 /* CountByView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -308,24 +289,23 @@
 			files = (
 				2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */,
 				2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */,
+				2BAC913D2CD9D1C00004C9BC /* ListErrorModel.swift in Sources */,
 				2B8C81AD2CCF29D600F08D24 /* CountSpaceViewModel.swift in Sources */,
 				2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */,
+				2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */,
 				2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */,
+				2BA42F962CD9C051002EC0E8 /* RedZoneUtility.swift in Sources */,
 				2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */,
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
 				2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */,
-				2BA5E2152CB32FFD007778D2 /* BaseballTheCountView.swift in Sources */,
 				2B9C1A8C2CD6A9E400FD66C6 /* StepMeterService.swift in Sources */,
 				2B9C1A842CD66E5700FD66C6 /* NoCountSpaceItemsView.swift in Sources */,
-				2BCE549D2CB7082A00BAC065 /* UseSoundSettingsView.swift in Sources */,
 				2B8C81A52CCF1EE000F08D24 /* ListRowCountSpaceView.swift in Sources */,
 				2B9A0E432CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift in Sources */,
 				2B8C81A72CCF20D600F08D24 /* AddCountSpaceView.swift in Sources */,
 				2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */,
 				2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */,
 				2B9A0E492CD7F3BF00B8A03C /* DataUtility.swift in Sources */,
-				2B9701812BF2F9F400C02353 /* BaseballRunView.swift in Sources */,
-				2B9C1A8A2CD6A92700FD66C6 /* StepView.swift in Sources */,
 				2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
