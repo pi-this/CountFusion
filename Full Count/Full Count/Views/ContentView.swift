@@ -40,94 +40,119 @@ struct ContentView: View {
     
     @StateObject var listViewModel: ListViewModel = ListViewModel()
     
+    @State private var animateGradient = false
+    
     var body: some View {
         
-        // intro animation
-        ZStack {
-                HStack {
-                    Spacer()
-                    Spacer()
-                    if showIcon {
-                        Image("CountFusionLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .transition(.opacity)
-                            .cornerRadius(12)
-                            .padding()
-                    }
-                    Spacer()
-                    if showText {
-                        Text("CountFusion")
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .foregroundColor(Color.blue)
-                            .offset(x: textOffset)
-                        
-                    }
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                }
-        }
+        LinearGradient(
+            gradient: Gradient(colors: [.green, .purple, .pink, .orange]),
+            startPoint: animateGradient ? .topLeading : .bottomTrailing,
+            endPoint: animateGradient ? .bottomTrailing : .topLeading
+        )
+        .edgesIgnoringSafeArea(.all)
         .onAppear {
-            withAnimation(.easeIn(duration: 1)) {
-                            showIcon = true
-                        }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            withAnimation(.easeIn(duration: 1)) {
-                                showText = true
-                                textOffset = -15
-                            }
-                            
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                withAnimation(.easeOut(duration: 1)) {
-                                    isVisible = false
-                                }
-                            }
-                        }
-                        
+            withAnimation(Animation.linear(duration: 5.0).repeatForever(autoreverses: true)) {
+                self.animateGradient.toggle()
+            }
         }
         
-        if !isVisible {
-            ZStack {
-                TabView(selection: $tabView) {
-                    SimpleCountView()
-                        .tabItem {
-                            Image(systemName: "numbers")
-                            Text("Simple Count")
-                                .onSubmit {
-                                    tabView = 1
-                                }
-                        }
-                        .tag(1)
-                    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
-                    CountSpaceMainView(item: item)
-                        .tabItem {
-                            Image(systemName: "list.number")
-                            Text("Multi-Count")
-                                .onSubmit {
-                                    tabView = 2
-                                }
-                        }
-                        .tag(2)
-                    SettingsView()
-                        .tabItem {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                                .onSubmit {
-                                    tabView = 3
-                                }
-                        }
-                        .tag(3)
-                }
-            }
+        .overlay(
             
-        }
+            VStack {
+                // intro animation
+                ZStack {
+                        HStack {
+                            Spacer()
+                            Spacer()
+                            if showIcon {
+                                Image("CountFusionLogo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50, height: 50)
+                                    .transition(.opacity)
+                                    .cornerRadius(12)
+                                    .padding()
+                            }
+                            Spacer()
+                            if showText {
+                                Text("CountFusion")
+                                    .font(.title)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color.blue)
+                                    .offset(x: textOffset)
+                                
+                                
+                            }
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                        }
+                }
+                .onAppear {
+                    withAnimation(.easeIn(duration: 1)) {
+                                    showIcon = true
+                                }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    withAnimation(.easeIn(duration: 1)) {
+                                        showText = true
+                                        textOffset = -15
+                                    }
+                                    
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                        withAnimation(.easeOut(duration: 1)) {
+                                            isVisible = false
+                                        }
+                                    }
+                                }
+                                
+                }
+                
+                if !isVisible {
+                    ZStack {
+                        TabView(selection: $tabView) {
+                            SimpleCountView()
+                                .tabItem {
+                                    Image(systemName: "numbers")
+                                    Text("Simple Count")
+                                        .onSubmit {
+                                            tabView = 1
+                                        }
+                                }
+                                .tag(1)
+                            var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0, favorite: false) }
+                            CountSpaceMainView(item: item)
+                                .tabItem {
+                                    Image(systemName: "list.number")
+                                    Text("Multi-Count")
+                                        .onSubmit {
+                                            tabView = 2
+                                        }
+                                }
+                                .tag(2)
+                            SettingsView()
+                                .tabItem {
+                                    Image(systemName: "gear")
+                                    Text("Settings")
+                                        .onSubmit {
+                                            tabView = 3
+                                        }
+                                }
+                                .tag(3)
+                        }
+                    }
+                    
+                }
 
-        }
+            }
+                .padding()
+                .background(colorScheme == .dark ? Color.black.opacity(0.8) : Color.white.opacity(0.8))
+                .cornerRadius(10)
+
+            
+        )
     }
+}
 
 
 #Preview {

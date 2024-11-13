@@ -1,43 +1,42 @@
-//
-//  ItemModel.swift
-//  Full Count
-//
-//  Created by Wesley Chastain on 10/27/24.
-//
-
 import Foundation
 
-// this is an immutable struct
+// This is an immutable struct
 struct CountSpaceItemModel: Identifiable, Codable {
     let id: String
     var title: String
     var value: Double
-    // keep all these lets so that there are no accedents to making the date here different than it is any place else. Making it so they cannot be changed on the fly. Only be changed through the function of updateCompleation to make code clean and consise.
-    
-    init(id: String = UUID().uuidString, title: String, value: Double) {
-        self.id = id // with id with string manual or auto create one
+    var favorite: Bool
+
+    // Prevent accidental changes to the date by making properties immutable outside of initialization
+    init(id: String = UUID().uuidString, title: String, value: Double, favorite: Bool) {
+        self.id = id // Allows manual setting or auto-creation of ID
         self.title = title
         self.value = value
+        self.favorite = favorite
     }
-    
-    func addToValue() -> CountSpaceItemModel {
-        return CountSpaceItemModel(id: id, title: title, value: value+1)
+
+    // Creates a new instance with an added value
+    func addToValue(addAmount: Double) -> CountSpaceItemModel {
+        return CountSpaceItemModel(id: id, title: title, value: value + addAmount, favorite: favorite)
     }
-    
+
+    // Updates the value in place
     mutating func addToValue(amount: Double) {
         self.value += amount
     }
     
+    // Updates the value in place
+    mutating func newFavorite(fav: Bool) {
+        self.favorite = fav
+    }
+
+    // Updates the title in place
     mutating func updateTitle(newTitle: String) {
         self.title = newTitle
     }
-    
-    func subtractToValue() -> CountSpaceItemModel {
-        return CountSpaceItemModel(id: id, title: title, value: value-1)
+
+    // Creates a new instance with a subtracted value
+    func subtractToValue(addAmount: Double) -> CountSpaceItemModel {
+        return CountSpaceItemModel(id: id, title: title, value: value - addAmount, favorite: favorite)
     }
 }
-
-
-
-// ItemModel(title: "Hello", isCompleated: true) <-- used when creating new items
-// ItemModel(id: "1", title: "Hello", isCompleated: true) <-- used when editing items (compleate or not) used because we already have an id.

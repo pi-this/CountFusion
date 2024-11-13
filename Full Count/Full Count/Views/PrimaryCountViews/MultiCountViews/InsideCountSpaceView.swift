@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct InsideCountSpaceView: View {
     @State var newTitle: String = ""
@@ -14,16 +15,36 @@ struct InsideCountSpaceView: View {
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
     @AppStorage("currentTitle") var currentTitle: String = ""
     @AppStorage("currentValue") var currentValue: Double = 0
+    @AppStorage("favorite") var favorite = ""
+    @AppStorage("useFavPopup") var useFavPopup: Bool = true
     
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
     
+    @AppStorage("count", store: UserDefaults(suiteName: "group.groupCountFusion.com.wesleychastainC.Full-Count")) var count: Double = 0
+    
+    @AppStorage("countTitle", store: UserDefaults(suiteName: "group.groupCountFusion.com.wesleychastainC.Full-Count")) var countTitle: String = "Count"
+    
+    @State var markHeartPresent: Bool = false
+    
     var item: CountSpaceItemModel
     @EnvironmentObject var listViewModel: ListViewModel
     
+    func favSet() {
+        if favorite == currentTitle {
+            count = currentValue
+            countTitle = currentTitle
+            // Update the AppStorage value
+            let sharedDefaults = UserDefaults(suiteName: "group.groupCountFusion.com.wesleychastainC.Full-Count")
+            sharedDefaults?.set(count, forKey: "count")
+            sharedDefaults?.set(countTitle, forKey: "countTitle")
+            // Refresh widget timelines
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+    }
+    
     var body: some View {
-        
-        
+    
         VStack {
             HStack {
                 Button("← Back") {
@@ -31,6 +52,41 @@ struct InsideCountSpaceView: View {
                 }
                 Spacer()
             }
+            
+            HStack {
+                Spacer()
+                Button(favorite == currentTitle ? "❤️" : "♡") {
+                    if favorite == currentTitle {
+                        if useFavPopup {
+                            markHeartPresent = false
+                        }
+                        else {
+                            favorite = currentTitle
+                        }
+                    }
+                    else {
+                        markHeartPresent = true
+                    }
+                    
+                }
+                .font(.system(size: favorite == currentTitle ? 15 : 20))
+                .alert(isPresented: $markHeartPresent) {
+                    Alert(
+                        title: Text("Set as Favorite?"),
+                        message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
+                        primaryButton: .destructive(Text("Confirm")) {
+                            favorite = currentTitle
+                        },
+                        secondaryButton: .cancel()
+                    )
+
+                    
+                    
+                }
+                .padding(2)
+
+            }
+            .padding(.horizontal, 25)
             
             Text("\(currentTitle)")
                 .font(.largeTitle)
@@ -53,6 +109,7 @@ struct InsideCountSpaceView: View {
                         listViewModel.updateItemTitle(currentTitle: currentTitle, newTitle: newTitle)
                         insideAddedView = false
                     }
+                    favSet()
                 }
                 .font(.title)
                 .buttonStyle(.bordered)
@@ -75,7 +132,7 @@ struct InsideCountSpaceView: View {
                         listViewModel.updateItemAdd(title: currentTitle, amount: doubleValue)
                         insideAddedView = false
                     }
-                    
+                    favSet()
                 }
                 .font(.title)
                 .buttonStyle(.bordered)
@@ -97,6 +154,7 @@ struct InsideCountSpaceView: View {
                         listViewModel.updateItemAdd(title: currentTitle, amount: -doubleValue)
                         insideAddedView = false
                     }
+                    favSet()
                 }
                 .font(.title)
                 .buttonStyle(.bordered)
@@ -154,6 +212,6 @@ struct Spacers: View {
 }
 
 #Preview {
-    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
+    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0, favorite: false) }
     InsideCountSpaceView(item: item)
 }

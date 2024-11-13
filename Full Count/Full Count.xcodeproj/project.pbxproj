@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3E5F2C2CDBF38F004D02BE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3E5F0A2CDBDB2F004D02BE /* WidgetKit.framework */; };
+		2B3E5F2D2CDBF38F004D02BE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3E5F0C2CDBDB2F004D02BE /* SwiftUI.framework */; };
+		2B3E5F3E2CDBF391004D02BE /* CountFusionWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2B3E5F2B2CDBF38F004D02BE /* CountFusionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2B6274092CDDAA6800DA2EF5 /* DataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6274062CDDAA6800DA2EF5 /* DataUtility.swift */; };
+		2B62740A2CDDAA6800DA2EF5 /* RedZoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6274072CDDAA6800DA2EF5 /* RedZoneUtility.swift */; };
 		2B8C81A52CCF1EE000F08D24 /* ListRowCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */; };
 		2B8C81A72CCF20D600F08D24 /* AddCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */; };
 		2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */; };
@@ -18,14 +23,11 @@
 		2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9701742BF2F94F00C02353 /* ContentView.swift */; };
 		2B9A0E432CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */; };
 		2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */; };
-		2B9A0E492CD7F3BF00B8A03C /* DataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */; };
 		2B9A0E512CD7FA4E00B8A03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */; };
 		2B9C1A842CD66E5700FD66C6 /* NoCountSpaceItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */; };
 		2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */; };
-		2B9C1A8C2CD6A9E400FD66C6 /* StepMeterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */; };
 		2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */; };
 		2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA42F932CD9BD46002EC0E8 /* CountByView.swift */; };
-		2BA42F962CD9C051002EC0E8 /* RedZoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA42F952CD9C051002EC0E8 /* RedZoneUtility.swift */; };
 		2BAC913D2CD9D1C00004C9BC /* ListErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */; };
 		2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */; };
 		2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */; };
@@ -33,7 +35,38 @@
 		2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2B3E5F3C2CDBF391004D02BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B9701672BF2F94F00C02353 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B3E5F2A2CDBF38F004D02BE;
+			remoteInfo = CountFusionWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2B8AFFEC2CDABA3D000E780B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2B3E5F3E2CDBF391004D02BE /* CountFusionWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2B3E5F0A2CDBDB2F004D02BE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2B3E5F0C2CDBDB2F004D02BE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2B3E5F2B2CDBF38F004D02BE /* CountFusionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountFusionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3E5F432CDBFA89004D02BE /* Full Count.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Full Count.entitlements"; sourceTree = "<group>"; };
+		2B3E5F442CDBFAF2004D02BE /* CountFusionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountFusionWidgetExtension.entitlements; sourceTree = "<group>"; };
+		2B6274062CDDAA6800DA2EF5 /* DataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtility.swift; sourceTree = "<group>"; };
+		2B6274072CDDAA6800DA2EF5 /* RedZoneUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedZoneUtility.swift; sourceTree = "<group>"; };
 		2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowCountSpaceView.swift; sourceTree = "<group>"; };
 		2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountSpaceView.swift; sourceTree = "<group>"; };
 		2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceItemModel.swift; sourceTree = "<group>"; };
@@ -46,14 +79,11 @@
 		2B9701742BF2F94F00C02353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAllByCustomCountSettingsView.swift; sourceTree = "<group>"; };
 		2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartSettingsView.swift; sourceTree = "<group>"; };
-		2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtility.swift; sourceTree = "<group>"; };
 		2B9A0E502CD7FA4E00B8A03C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B9C1A832CD66E5700FD66C6 /* NoCountSpaceItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCountSpaceItemsView.swift; sourceTree = "<group>"; };
 		2B9C1A852CD67D2500FD66C6 /* SimpleCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCountView.swift; sourceTree = "<group>"; };
-		2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepMeterService.swift; sourceTree = "<group>"; };
 		2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceView.swift; sourceTree = "<group>"; };
 		2BA42F932CD9BD46002EC0E8 /* CountByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountByView.swift; sourceTree = "<group>"; };
-		2BA42F952CD9C051002EC0E8 /* RedZoneUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedZoneUtility.swift; sourceTree = "<group>"; };
 		2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListErrorModel.swift; sourceTree = "<group>"; };
 		2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
 		2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -61,7 +91,30 @@
 		2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2B3E5F3F2CDBF391004D02BE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2B3E5F2A2CDBF38F004D02BE /* CountFusionWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2B3E5F2E2CDBF38F004D02BE /* CountFusionWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (2B3E5F3F2CDBF391004D02BE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CountFusionWidget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		2B3E5F282CDBF38F004D02BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B3E5F2D2CDBF38F004D02BE /* SwiftUI.framework in Frameworks */,
+				2B3E5F2C2CDBF38F004D02BE /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2B97016C2BF2F94F00C02353 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,6 +125,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B3E5F092CDBDB2F004D02BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B3E5F0A2CDBDB2F004D02BE /* WidgetKit.framework */,
+				2B3E5F0C2CDBDB2F004D02BE /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B62740D2CDDAAD300DA2EF5 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				2B6274062CDDAA6800DA2EF5 /* DataUtility.swift */,
+				2B6274072CDDAA6800DA2EF5 /* RedZoneUtility.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
 		2B91156B2CCB4163005D95F3 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +156,11 @@
 		2B9701662BF2F94F00C02353 = {
 			isa = PBXGroup;
 			children = (
+				2B3E5F442CDBFAF2004D02BE /* CountFusionWidgetExtension.entitlements */,
 				2B9701712BF2F94F00C02353 /* Full Count */,
+				2B3E5F2E2CDBF38F004D02BE /* CountFusionWidget */,
 				2B9701702BF2F94F00C02353 /* Products */,
+				2B3E5F092CDBDB2F004D02BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				2B97016F2BF2F94F00C02353 /* Full Count.app */,
+				2B3E5F2B2CDBF38F004D02BE /* CountFusionWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,13 +176,14 @@
 		2B9701712BF2F94F00C02353 /* Full Count */ = {
 			isa = PBXGroup;
 			children = (
+				2B3E5F432CDBFA89004D02BE /* Full Count.entitlements */,
 				2B9A0E292CD7E52100B8A03C /* Application */,
 				2B9A0E2A2CD7E53500B8A03C /* Models */,
 				2B9A0E2B2CD7E54100B8A03C /* Views */,
 				2B9A0E2C2CD7E54700B8A03C /* ViewModels */,
 				2B9A0E2D2CD7E55800B8A03C /* Services */,
-				2B9A0E2E2CD7E55E00B8A03C /* Utilities */,
 				2B9A0E2F2CD7E56500B8A03C /* Resources */,
+				2B62740D2CDDAAD300DA2EF5 /* Utilites */,
 			);
 			path = "Full Count";
 			sourceTree = "<group>";
@@ -133,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				2B9701742BF2F94F00C02353 /* ContentView.swift */,
-				2B9A0E382CD7EB6C00B8A03C /* CustomCountViews */,
+				2B9A0E382CD7EB6C00B8A03C /* PrimaryCountViews */,
 				2B9A0E412CD7ED9B00B8A03C /* Settings */,
 			);
 			path = Views;
@@ -150,18 +226,8 @@
 		2B9A0E2D2CD7E55800B8A03C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2B9C1A8B2CD6A9DE00FD66C6 /* StepMeterService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		2B9A0E2E2CD7E55E00B8A03C /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				2BA42F952CD9C051002EC0E8 /* RedZoneUtility.swift */,
-				2B9A0E482CD7F3BE00B8A03C /* DataUtility.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		2B9A0E2F2CD7E56500B8A03C /* Resources */ = {
@@ -194,13 +260,13 @@
 			path = SimpleCountView;
 			sourceTree = "<group>";
 		};
-		2B9A0E382CD7EB6C00B8A03C /* CustomCountViews */ = {
+		2B9A0E382CD7EB6C00B8A03C /* PrimaryCountViews */ = {
 			isa = PBXGroup;
 			children = (
 				2B9A0E372CD7EB6000B8A03C /* SimpleCountView */,
 				2B9A0E362CD7EB3100B8A03C /* MultiCountViews */,
 			);
-			path = CustomCountViews;
+			path = PrimaryCountViews;
 			sourceTree = "<group>";
 		};
 		2B9A0E412CD7ED9B00B8A03C /* Settings */ = {
@@ -218,6 +284,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2B3E5F2A2CDBF38F004D02BE /* CountFusionWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B3E5F402CDBF391004D02BE /* Build configuration list for PBXNativeTarget "CountFusionWidgetExtension" */;
+			buildPhases = (
+				2B3E5F272CDBF38F004D02BE /* Sources */,
+				2B3E5F282CDBF38F004D02BE /* Frameworks */,
+				2B3E5F292CDBF38F004D02BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2B3E5F2E2CDBF38F004D02BE /* CountFusionWidget */,
+			);
+			name = CountFusionWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CountFusionWidgetExtension;
+			productReference = 2B3E5F2B2CDBF38F004D02BE /* CountFusionWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2B97016E2BF2F94F00C02353 /* Full Count */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B97017D2BF2F95100C02353 /* Build configuration list for PBXNativeTarget "Full Count" */;
@@ -225,10 +313,12 @@
 				2B97016B2BF2F94F00C02353 /* Sources */,
 				2B97016C2BF2F94F00C02353 /* Frameworks */,
 				2B97016D2BF2F94F00C02353 /* Resources */,
+				2B8AFFEC2CDABA3D000E780B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2B3E5F3D2CDBF391004D02BE /* PBXTargetDependency */,
 			);
 			name = "Full Count";
 			productName = "Full Count";
@@ -242,9 +332,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					2B3E5F2A2CDBF38F004D02BE = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					2B97016E2BF2F94F00C02353 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -264,11 +357,19 @@
 			projectRoot = "";
 			targets = (
 				2B97016E2BF2F94F00C02353 /* Full Count */,
+				2B3E5F2A2CDBF38F004D02BE /* CountFusionWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2B3E5F292CDBF38F004D02BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2B97016D2BF2F94F00C02353 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +384,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2B3E5F272CDBF38F004D02BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2B97016B2BF2F94F00C02353 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,25 +402,92 @@
 				2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */,
 				2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */,
 				2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */,
-				2BA42F962CD9C051002EC0E8 /* RedZoneUtility.swift in Sources */,
 				2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */,
+				2B62740A2CDDAA6800DA2EF5 /* RedZoneUtility.swift in Sources */,
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
 				2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */,
-				2B9C1A8C2CD6A9E400FD66C6 /* StepMeterService.swift in Sources */,
+				2B6274092CDDAA6800DA2EF5 /* DataUtility.swift in Sources */,
 				2B9C1A842CD66E5700FD66C6 /* NoCountSpaceItemsView.swift in Sources */,
 				2B8C81A52CCF1EE000F08D24 /* ListRowCountSpaceView.swift in Sources */,
 				2B9A0E432CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift in Sources */,
 				2B8C81A72CCF20D600F08D24 /* AddCountSpaceView.swift in Sources */,
 				2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */,
 				2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */,
-				2B9A0E492CD7F3BF00B8A03C /* DataUtility.swift in Sources */,
 				2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2B3E5F3D2CDBF391004D02BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B3E5F2A2CDBF38F004D02BE /* CountFusionWidgetExtension */;
+			targetProxy = 2B3E5F3C2CDBF391004D02BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2B3E5F412CDBF391004D02BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CountFusionWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G575KQ36CP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CountFusionWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CountFusionWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesleychastainC.Full-Count.CountFusionWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B3E5F422CDBF391004D02BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CountFusionWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G575KQ36CP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CountFusionWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CountFusionWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesleychastainC.Full-Count.CountFusionWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2B97017B2BF2F95100C02353 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -437,6 +612,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Full Count/Full Count.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -447,7 +623,6 @@
 				INFOPLIST_FILE = "Full-Count-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to motion data to count your steps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -479,6 +654,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Full Count/Full Count.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -489,7 +665,6 @@
 				INFOPLIST_FILE = "Full-Count-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSMotionUsageDescription = "This app requires access to motion data to count your steps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -519,6 +694,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2B3E5F402CDBF391004D02BE /* Build configuration list for PBXNativeTarget "CountFusionWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B3E5F412CDBF391004D02BE /* Debug */,
+				2B3E5F422CDBF391004D02BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2B97016A2BF2F94F00C02353 /* Build configuration list for PBXProject "Full Count" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

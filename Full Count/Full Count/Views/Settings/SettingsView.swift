@@ -53,6 +53,7 @@ struct SettingsView: View {
     @AppStorage("addAllByStr") var addAllByStr = ""
     @AppStorage("showFullCount") var showFullCount: Bool = false
     @AppStorage("showInningOver") var showInningOver: Bool = true
+    @AppStorage("useFavPopup") var useFavPopup: Bool = true
     
     
     // 2 is baseball
@@ -63,7 +64,7 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 
-                    Section(header: Text("Count")) {
+                Section(header: Text("Count"), footer: Text("Select the increment value for counting. This setting customizes how your counts are adjusted.")) {
                         
                         VStack {
                             HStack {
@@ -76,6 +77,14 @@ struct SettingsView: View {
                         CountByView()
                         
                     }
+                
+                Section(header: Text("Favorite") , footer: Text("Toggle to show or hide the favorite notification. Only one favorite item can be displayed on the widget. This feature is enabled by default.")) {
+                    VStack {
+                        Toggle(isOn: $useFavPopup) {
+                            Text("Ask for favorite toggle")
+                        }
+                    }
+                }
 
                 
                 

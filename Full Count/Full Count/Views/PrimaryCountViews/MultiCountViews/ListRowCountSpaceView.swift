@@ -25,6 +25,6 @@ struct ListRowCountSpaceView: View {
 }
 
 #Preview {
-    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
+    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0, favorite: false) }
     ListRowCountSpaceView(item: item)
 }

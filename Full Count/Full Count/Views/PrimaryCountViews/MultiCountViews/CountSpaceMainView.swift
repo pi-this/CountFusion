@@ -26,7 +26,7 @@ struct CountSpaceMainView: View {
 }
  
 #Preview {
-    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0) }
+    var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0, favorite: false) }
     CountSpaceMainView(item: item)
         .environmentObject(ListViewModel())
 }

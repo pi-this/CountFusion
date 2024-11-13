@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 
 @main
 struct Full_CountApp: App {
@@ -26,7 +27,8 @@ struct Full_CountApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(listViewModel)
+                
         }
+        
     }
 }
-
