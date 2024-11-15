@@ -45,13 +45,13 @@ struct ContentView: View {
     var body: some View {
         
         LinearGradient(
-            gradient: Gradient(colors: [.green, .purple, .pink, .orange]),
+            gradient: Gradient(colors: [.blue, .teal, .green, .yellow]),
             startPoint: animateGradient ? .topLeading : .bottomTrailing,
             endPoint: animateGradient ? .bottomTrailing : .topLeading
         )
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            withAnimation(Animation.linear(duration: 5.0).repeatForever(autoreverses: true)) {
+            withAnimation(Animation.linear(duration: 5.0)) {
                 self.animateGradient.toggle()
             }
         }

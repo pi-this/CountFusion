@@ -9,6 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct InsideCountSpaceView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var newTitle: String = ""
     @State var valueAdd: String = ""
     @State var valueSubtract: String = ""
@@ -65,17 +66,25 @@ struct InsideCountSpaceView: View {
                         }
                     }
                     else {
-                        markHeartPresent = true
+                        if useFavPopup {
+                            markHeartPresent = true
+                        }
+                        else {
+                            favorite = currentTitle
+                            favSet()
+                        }
+                        
                     }
                     
                 }
                 .font(.system(size: favorite == currentTitle ? 15 : 20))
                 .alert(isPresented: $markHeartPresent) {
                     Alert(
-                        title: Text("Set as Favorite?"),
+                        title: Text("Mark as Favorite?"),
                         message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
-                        primaryButton: .destructive(Text("Confirm")) {
+                        primaryButton: .destructive(Text("Yes")) {
                             favorite = currentTitle
+                            favSet()
                         },
                         secondaryButton: .cancel()
                     )
@@ -111,11 +120,13 @@ struct InsideCountSpaceView: View {
                     }
                     favSet()
                 }
-                .font(.title)
-                .buttonStyle(.bordered)
-                .foregroundColor(.blue)
-                .edgesIgnoringSafeArea(.all)
-                .border(Color.blue)
+                .font(.system(size: 45, weight: .bold)) .foregroundColor(.green) .frame(width: 50, height: 50) // Set the frame size to be square
+                .background(colorScheme == .dark ? Color.black : Color.white)
+                .clipShape(Circle())
+                .overlay( // Add an overlay
+                    Circle() // Use a circle shape for the overlay
+                        .stroke(Color.blue, lineWidth: 5) // Set the border color and width
+                )
                 Spacers(amount: 7)
             }
             
@@ -134,11 +145,14 @@ struct InsideCountSpaceView: View {
                     }
                     favSet()
                 }
-                .font(.title)
-                .buttonStyle(.bordered)
-                .foregroundColor(.green)
-                .edgesIgnoringSafeArea(.all)
-                .border(Color.green)
+                .font(.system(size: 45, weight: .bold)) .foregroundColor(.green)
+                .frame(width: 50, height: 50) // Set the frame size to be square
+                .background(colorScheme == .dark ? Color.black : Color.white)
+                .clipShape(Circle())
+                .overlay( // Add an overlay
+                    Circle() // Use a circle shape for the overlay
+                        .stroke(Color.green, lineWidth: 5) // Set the border color and width
+                )
                 Spacers(amount: 7)
             }
             
@@ -155,12 +169,14 @@ struct InsideCountSpaceView: View {
                         insideAddedView = false
                     }
                     favSet()
-                }
-                .font(.title)
-                .buttonStyle(.bordered)
-                .foregroundColor(.red)
-                .edgesIgnoringSafeArea(.all)
-                .border(Color.red)
+                 }
+                .font(.system(size: 45, weight: .bold)) .foregroundColor(.red) .frame(width: 50, height: 50) // Set the frame size to be square
+                .background(colorScheme == .dark ? Color.black : Color.white)
+                .clipShape(Circle())
+                .overlay( // Add an overlay
+                    Circle() // Use a circle shape for the overlay
+                        .stroke(Color.red, lineWidth: 5) // Set the border color and width
+                )
                 Spacers(amount: 7)
             }
   
@@ -171,7 +187,7 @@ struct InsideCountSpaceView: View {
             
         }
         
-        
+   
         
         
     }

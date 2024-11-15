@@ -9,9 +9,11 @@ import SwiftUI
 import WidgetKit
 
 struct SimpleCountView: View {
+    @Environment(\.colorScheme) var colorScheme
     @AppStorage("simPlainNum") var simPlainNum:Double = 0
     @AppStorage("addAllByStr") var addAllByStr = ""
     @AppStorage("favorite") var favorite = ""
+    @AppStorage("useFavPopup") var useFavPopup: Bool = true
     
     @AppStorage("count", store: UserDefaults(suiteName: "group.groupCountFusion.com.wesleychastainC.Full-Count")) var count: Double = 0
     
@@ -49,7 +51,13 @@ struct SimpleCountView: View {
                             markHeartPresent = false
                         }
                         else {
-                            markHeartPresent = true
+                            if useFavPopup {
+                                markHeartPresent = true
+                            }
+                            else {
+                                favorite = "simpleCount"
+                                favSet()
+                            }
                         }
                         
                     }
@@ -57,8 +65,10 @@ struct SimpleCountView: View {
                     .alert(isPresented: $markHeartPresent) {
                         Alert(
                             title: Text("Mark as Favorite?"),
+                            message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
                             primaryButton: .destructive(Text("Yes")) {
                                 favorite = "simpleCount"
+                                favSet()
                                 
                             },
                             secondaryButton: .cancel()
@@ -70,7 +80,7 @@ struct SimpleCountView: View {
                     .padding(2)
 
                 }
-                .padding(.horizontal, 25)
+                .padding(25)
                     
 
             Spacer()
@@ -81,13 +91,17 @@ struct SimpleCountView: View {
                     simPlainNum -= Double(addAllByStr) ?? 1
                     favSet()
                 }
-                .buttonStyle(.bordered)
-                .foregroundColor(.red)
-                .edgesIgnoringSafeArea(.all)
-                .border(Color.red)
+                .font(.system(size: 45, weight: .bold)) .foregroundColor(.red) .frame(width: 80, height: 80) // Set the frame size to be square
+                .background(colorScheme == .dark ? Color.black : Color.white)
+                .clipShape(Circle())
+                .overlay( // Add an overlay
+                    Circle() // Use a circle shape for the overlay
+                        .stroke(Color.red, lineWidth: 5) // Set the border color and width
+                )
+
                 Spacer()
                 Text("\(formatNumber(simPlainNum))")
-                    .font(.largeTitle)
+                    .font(.system(size: 57, weight: .bold))
                     .fontWeight(.heavy)
                 Spacer()
                 
@@ -95,24 +109,29 @@ struct SimpleCountView: View {
                     simPlainNum += Double(addAllByStr) ?? 1
                     favSet()
                 }
-                .buttonStyle(.bordered)
-                .foregroundColor(.green)
-                .edgesIgnoringSafeArea(.all)
-                .border(Color.green)
+                .font(.system(size: 45, weight: .bold)) .foregroundColor(.green) .frame(width: 80, height: 80) // Set the frame size to be square
+                .background(colorScheme == .dark ? Color.black : Color.white)
+                .clipShape(Circle())
+                .overlay( // Add an overlay
+                    Circle() // Use a circle shape for the overlay
+                        .stroke(Color.green, lineWidth: 5) // Set the border color and width
+                )
                 Spacer()
                 Spacer()
-            }
-            HStack {
-                Button("clear") {
-                    simPlainNum = 0
-                    favSet()
-                }
-                .buttonStyle(.bordered)
-                .foregroundColor(.orange)
-                .edgesIgnoringSafeArea(.all)
-                .border(Color.yellow)
             }
             Spacer()
+            /*
+             HStack {
+                 Button("clear") {
+                     simPlainNum = 0
+                     favSet()
+                 }
+                 .buttonStyle(.bordered)
+                 .foregroundColor(.orange)
+                 .edgesIgnoringSafeArea(.all)
+                 .border(Color.yellow)
+             }
+             */
         }
         
         

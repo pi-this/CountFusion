@@ -16,6 +16,8 @@ struct CountSpaceView: View {
     @AppStorage("currentValue") var currentValue: Double = 0.0
     @State var deleteAllItemsAlert: Bool = false
     @AppStorage("useFavPopup") var useFavPopup: Bool = true
+    @State private var selectedItem: CountSpaceItemModel?
+    @Environment(\.colorScheme) var colorScheme
     
     @AppStorage("favorite") var favorite = ""
     
@@ -29,10 +31,10 @@ struct CountSpaceView: View {
     @State var markHeartPresent: Bool = false
     
 
-    func favSet() {
-        if favorite == currentTitle {
-            count = currentValue
-            countTitle = currentTitle
+    func favSet(titleItem: String, valueItem: Double) {
+        if favorite == titleItem {
+            count = valueItem
+            countTitle = titleItem
             // Update the AppStorage value
             let sharedDefaults = UserDefaults(suiteName: "group.groupCountFusion.com.wesleychastainC.Full-Count")
             sharedDefaults?.set(count, forKey: "count")
@@ -41,7 +43,6 @@ struct CountSpaceView: View {
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
-
     
     var body: some View {
         NavigationView {
@@ -81,19 +82,21 @@ struct CountSpaceView: View {
                                             insideAddedView = true
                                         }
                                     }
-                                
+
                                 Text("➖")
                                     .onTapGesture {
                                         listViewModel.updateItemSubtract(item: item)
+                                        favSet(titleItem: item.title, valueItem: item.value)
                                 }
                                 Spacers(amount: 3)
                                 Text("➕")
                                     .onTapGesture{
                                         listViewModel.updateItemAdd(item: item)
+                                        favSet(titleItem: item.title, valueItem: item.value)
                                     }
                                     .padding(.horizontal, 5)
                                 
-                                
+
                                 HStack {
                                     ZStack {
                                         Circle()
@@ -103,6 +106,7 @@ struct CountSpaceView: View {
                                             .padding()
                                         Button(favorite == item.title ? "❤️" : "♡") {
                                             if favorite == item.title {
+ 
                                                 if useFavPopup {
                                                     markHeartPresent = false
                                                 }
@@ -111,17 +115,30 @@ struct CountSpaceView: View {
                                                 }
                                             }
                                             else {
-                                                markHeartPresent = true
+                                                if useFavPopup {
+                                                    selectedItem = item // records selected item to fix the error where the tiem.title didn't seam to carry over to the alert
+                                                    markHeartPresent = true
+                                                }
+                                                else {
+                                                    selectedItem = item
+                                                    favorite = selectedItem?.title ?? ""
+                                                    favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                }
+                                                
+                                                
                                             }
+                                        
                                             
                                         }
+                                    
                                         .font(.system(size: favorite == item.title ? 15 : 20))
                                         .alert(isPresented: $markHeartPresent) {
                                             Alert(
-                                                title: Text("Set as Favorite?"),
+                                                title: Text("Mark as Favorite?"),
                                                 message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
-                                                primaryButton: .destructive(Text("Confirm")) {
-                                                    favorite = item.title
+                                                primaryButton: .destructive(Text("Yes")) {
+                                                    favorite = selectedItem?.title ?? ""
+                                                    favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
                                                 },
                                                 secondaryButton: .cancel()
                                             )
@@ -131,7 +148,6 @@ struct CountSpaceView: View {
                                         }
                                         .padding(2)
                                     }
-                                    
                                     
 
                                 }
