@@ -80,6 +80,7 @@ struct CountFusionWidget: Widget {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             CountFusionWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
+                .widgetURL(URL(string: "countfusion://home")!)
         }
         .configurationDisplayName("Display Count")
         .description("Displays the count that the user selects in the app.")

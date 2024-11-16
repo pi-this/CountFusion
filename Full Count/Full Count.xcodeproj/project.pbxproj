@@ -12,6 +12,14 @@
 		2B3E5F3E2CDBF391004D02BE /* CountFusionWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2B3E5F2B2CDBF38F004D02BE /* CountFusionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2B6274092CDDAA6800DA2EF5 /* DataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6274062CDDAA6800DA2EF5 /* DataUtility.swift */; };
 		2B62740A2CDDAA6800DA2EF5 /* RedZoneUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6274072CDDAA6800DA2EF5 /* RedZoneUtility.swift */; };
+		2B6F948D2CE8E7BF0034E095 /* CounterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F948C2CE8E7BF0034E095 /* CounterSettingsView.swift */; };
+		2B6F948F2CE8E8E00034E095 /* FavoriteSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F948E2CE8E8E00034E095 /* FavoriteSettingsView.swift */; };
+		2B6F94A12CE8EA4C0034E095 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F94A02CE8EA4C0034E095 /* SearchBar.swift */; };
+		2B6F94A32CE8EB2F0034E095 /* SectionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F94A22CE8EB2F0034E095 /* SectionSettingsView.swift */; };
+		2B6F94B52CE8F19D0034E095 /* AnimationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F94B42CE8F19D0034E095 /* AnimationSettingsView.swift */; };
+		2B6F94B72CE8F98B0034E095 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F94B62CE8F98A0034E095 /* GeneralSettingsView.swift */; };
+		2B6F94B92CE8FBD80034E095 /* PreferencesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F94B82CE8FBD80034E095 /* PreferencesSettingsView.swift */; };
+		2B6F94BB2CE8FBD90034E095 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F94BA2CE8FBD90034E095 /* AppearanceSettingsView.swift */; };
 		2B8C81A52CCF1EE000F08D24 /* ListRowCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */; };
 		2B8C81A72CCF20D600F08D24 /* AddCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */; };
 		2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */; };
@@ -29,7 +37,7 @@
 		2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */; };
 		2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA42F932CD9BD46002EC0E8 /* CountByView.swift */; };
 		2BAC913D2CD9D1C00004C9BC /* ListErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */; };
-		2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */; };
+		2BBB42062CCC0F7200B94E2B /* DisplaySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* DisplaySettingsView.swift */; };
 		2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */; };
 		2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */; };
 		2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */; };
@@ -67,6 +75,14 @@
 		2B3E5F442CDBFAF2004D02BE /* CountFusionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountFusionWidgetExtension.entitlements; sourceTree = "<group>"; };
 		2B6274062CDDAA6800DA2EF5 /* DataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtility.swift; sourceTree = "<group>"; };
 		2B6274072CDDAA6800DA2EF5 /* RedZoneUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedZoneUtility.swift; sourceTree = "<group>"; };
+		2B6F948C2CE8E7BF0034E095 /* CounterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSettingsView.swift; sourceTree = "<group>"; };
+		2B6F948E2CE8E8E00034E095 /* FavoriteSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSettingsView.swift; sourceTree = "<group>"; };
+		2B6F94A02CE8EA4C0034E095 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		2B6F94A22CE8EB2F0034E095 /* SectionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSettingsView.swift; sourceTree = "<group>"; };
+		2B6F94B42CE8F19D0034E095 /* AnimationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSettingsView.swift; sourceTree = "<group>"; };
+		2B6F94B62CE8F98A0034E095 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		2B6F94B82CE8FBD80034E095 /* PreferencesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesSettingsView.swift; sourceTree = "<group>"; };
+		2B6F94BA2CE8FBD90034E095 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
 		2B8C81A42CCF1ED900F08D24 /* ListRowCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowCountSpaceView.swift; sourceTree = "<group>"; };
 		2B8C81A62CCF20D600F08D24 /* AddCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountSpaceView.swift; sourceTree = "<group>"; };
 		2B8C81A92CCF237600F08D24 /* CountSpaceItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceItemModel.swift; sourceTree = "<group>"; };
@@ -85,7 +101,7 @@
 		2BA3AD802CCEF89B00FF8ABC /* CountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceView.swift; sourceTree = "<group>"; };
 		2BA42F932CD9BD46002EC0E8 /* CountByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountByView.swift; sourceTree = "<group>"; };
 		2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListErrorModel.swift; sourceTree = "<group>"; };
-		2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
+		2BBB42052CCC0F7100B94E2B /* DisplaySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsView.swift; sourceTree = "<group>"; };
 		2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCountSpaceView.swift; sourceTree = "<group>"; };
 		2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceMainView.swift; sourceTree = "<group>"; };
@@ -141,6 +157,52 @@
 				2B6274072CDDAA6800DA2EF5 /* RedZoneUtility.swift */,
 			);
 			path = Utilites;
+			sourceTree = "<group>";
+		};
+		2B6F94892CE8E7840034E095 /* Settings Groups */ = {
+			isa = PBXGroup;
+			children = (
+				2B6F94BC2CE8FCD20034E095 /* Top Settings */,
+				2B6F94BF2CE8FDF40034E095 /* Appearance */,
+				2B6F94BE2CE8FDE00034E095 /* Preferences */,
+				2B6F94BD2CE8FDCD0034E095 /* General */,
+			);
+			path = "Settings Groups";
+			sourceTree = "<group>";
+		};
+		2B6F94BC2CE8FCD20034E095 /* Top Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2B6F94B62CE8F98A0034E095 /* GeneralSettingsView.swift */,
+				2B6F94BA2CE8FBD90034E095 /* AppearanceSettingsView.swift */,
+				2B6F94B82CE8FBD80034E095 /* PreferencesSettingsView.swift */,
+			);
+			path = "Top Settings";
+			sourceTree = "<group>";
+		};
+		2B6F94BD2CE8FDCD0034E095 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				2B6F948C2CE8E7BF0034E095 /* CounterSettingsView.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		2B6F94BE2CE8FDE00034E095 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2B6F948E2CE8E8E00034E095 /* FavoriteSettingsView.swift */,
+				2B6F94B42CE8F19D0034E095 /* AnimationSettingsView.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		2B6F94BF2CE8FDF40034E095 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB42052CCC0F7100B94E2B /* DisplaySettingsView.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		2B91156B2CCB4163005D95F3 /* Sounds */ = {
@@ -272,10 +334,12 @@
 		2B9A0E412CD7ED9B00B8A03C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				2B6F94A22CE8EB2F0034E095 /* SectionSettingsView.swift */,
+				2B6F94A02CE8EA4C0034E095 /* SearchBar.swift */,
+				2B6F94892CE8E7840034E095 /* Settings Groups */,
 				2B9A0E442CD7EF6C00B8A03C /* RestartSettingsView.swift */,
 				2B9A0E422CD7EDDF00B8A03C /* AddAllByCustomCountSettingsView.swift */,
 				2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */,
-				2BBB42052CCC0F7100B94E2B /* AdvancedSettingsView.swift */,
 				2BA42F932CD9BD46002EC0E8 /* CountByView.swift */,
 			);
 			path = Settings;
@@ -395,15 +459,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6F948D2CE8E7BF0034E095 /* CounterSettingsView.swift in Sources */,
+				2B6F94B72CE8F98B0034E095 /* GeneralSettingsView.swift in Sources */,
 				2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */,
-				2BBB42062CCC0F7200B94E2B /* AdvancedSettingsView.swift in Sources */,
+				2BBB42062CCC0F7200B94E2B /* DisplaySettingsView.swift in Sources */,
 				2BAC913D2CD9D1C00004C9BC /* ListErrorModel.swift in Sources */,
 				2B8C81AD2CCF29D600F08D24 /* CountSpaceViewModel.swift in Sources */,
 				2B8C81AA2CCF237600F08D24 /* CountSpaceItemModel.swift in Sources */,
 				2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */,
 				2B9C1A862CD67D2500FD66C6 /* SimpleCountView.swift in Sources */,
 				2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */,
+				2B6F94A12CE8EA4C0034E095 /* SearchBar.swift in Sources */,
+				2B6F948F2CE8E8E00034E095 /* FavoriteSettingsView.swift in Sources */,
+				2B6F94B92CE8FBD80034E095 /* PreferencesSettingsView.swift in Sources */,
 				2B62740A2CDDAA6800DA2EF5 /* RedZoneUtility.swift in Sources */,
+				2B6F94A32CE8EB2F0034E095 /* SectionSettingsView.swift in Sources */,
+				2B6F94B52CE8F19D0034E095 /* AnimationSettingsView.swift in Sources */,
+				2B6F94BB2CE8FBD90034E095 /* AppearanceSettingsView.swift in Sources */,
 				2B9701752BF2F94F00C02353 /* ContentView.swift in Sources */,
 				2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */,
 				2B6274092CDDAA6800DA2EF5 /* DataUtility.swift in Sources */,
@@ -440,7 +512,7 @@
 				DEVELOPMENT_TEAM = G575KQ36CP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CountFusionWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CountFusionWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +542,7 @@
 				DEVELOPMENT_TEAM = G575KQ36CP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CountFusionWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CountFusionWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -621,7 +693,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Full-Count-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
+				INFOPLIST_KEY_CFBundleDisplayName = CountFuse;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -663,7 +735,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Full-Count-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = CountFusion;
+				INFOPLIST_KEY_CFBundleDisplayName = CountFuse;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

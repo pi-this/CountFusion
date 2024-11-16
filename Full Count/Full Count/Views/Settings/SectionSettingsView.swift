@@ -15,7 +15,7 @@
 
 import SwiftUI
 
-struct SectionView<Destination: View>: View {
+struct SectionSettingsView<Destination: View>: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("modeWanted") var modeWanted: String = ""
     @AppStorage("modeTurned") var modeTurned: Bool = false
@@ -25,24 +25,16 @@ struct SectionView<Destination: View>: View {
     var text: String
     
     var body: some View {
-        NavigationView {
-            Form {
-
-                Section() {
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: destinationType) {
-                                Text(text)
-                            }
-                        }
-                    }
-            }
+        VStack {
+            HStack {
+                NavigationLink(destination: destinationType) {
+                    Text(text)
+                }
             }
         }
-        
     }
 }
 
 #Preview {
-    SectionView(destinationType: CounterSettingsView(), text: "#️⃣ Count")
+    SectionSettingsView(destinationType: CounterSettingsView(), text: "#️⃣ Count")
 }

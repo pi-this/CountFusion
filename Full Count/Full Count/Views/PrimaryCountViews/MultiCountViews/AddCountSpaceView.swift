@@ -17,34 +17,38 @@ struct AddCountSpaceView: View {
     @State var showAlert: Bool = false
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    TextField("Type something...", text: $textFieldText)
-                        .padding(.horizontal)
-                        .frame(height: 55)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(10)
-                        
-                    
-                    Button(action: {
-                        saveButtonPressed()
-                    }, label: {
-                        Text("Save".uppercased())
-                            .foregroundColor(colorScheme == .dark ? .black : .white)
-                            .frame(height: 55)
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.accentColor)
-                            .cornerRadius(10)
+        ScrollView {
+            VStack {
+                NavigationView {
+                    ScrollView {
+                        VStack {
+                            TextField("Type something...", text: $textFieldText)
+                                .padding(.horizontal)
+                                .frame(height: 55)
+                                .background(Color.gray.opacity(0.1))
+                                .cornerRadius(10)
+                                
+                            
+                            Button(action: {
+                                saveButtonPressed()
+                            }, label: {
+                                Text("Save".uppercased())
+                                    .foregroundColor(colorScheme == .dark ? .black : .white)
+                                    .frame(height: 55)
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.accentColor)
+                                    .cornerRadius(10)
+                            }
+                            )
+                        }
+                        .padding(14)
                     }
-                    )
+                    .navigationTitle("Add an Item 📥")
+                    .alert(isPresented: $showAlert) {
+                        getAlert()
+                    }
                 }
-                .padding(14)
-            }
-            .navigationTitle("Add an Item 📥")
-            .alert(isPresented: $showAlert) {
-                getAlert()
             }
         }
     }

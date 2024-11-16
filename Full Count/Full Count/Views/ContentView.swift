@@ -42,8 +42,9 @@ struct ContentView: View {
     
     @State private var animateGradient = false
     
+    @AppStorage("introAnimation") var introAnimation: Bool = true
+    
     var body: some View {
-        
         LinearGradient(
             gradient: Gradient(colors: [.blue, .teal, .green, .yellow]),
             startPoint: animateGradient ? .topLeading : .bottomTrailing,
@@ -58,7 +59,9 @@ struct ContentView: View {
         
         .overlay(
             
+            
             VStack {
+                
                 // intro animation
                 ZStack {
                         HStack {
@@ -81,7 +84,7 @@ struct ContentView: View {
                                     .foregroundColor(Color.blue)
                                     .offset(x: textOffset)
                                 
-                                
+                
                             }
                             Spacer()
                             Spacer()
@@ -89,22 +92,30 @@ struct ContentView: View {
                         }
                 }
                 .onAppear {
-                    withAnimation(.easeIn(duration: 1)) {
-                                    showIcon = true
-                                }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    withAnimation(.easeIn(duration: 1)) {
-                                        showText = true
-                                        textOffset = -15
+                    if introAnimation {
+                        withAnimation(.easeIn(duration: 1)) {
+                                        showIcon = true
                                     }
-                                    
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                        withAnimation(.easeOut(duration: 1)) {
-                                            isVisible = false
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        withAnimation(.easeIn(duration: 1)) {
+                                            showText = true
+                                            textOffset = -15
+                                        }
+                                        
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                            withAnimation(.easeOut(duration: 1)) {
+                                                isVisible = false
+                                            }
                                         }
                                     }
-                                }
+                    }
+                    else {
+                        showIcon = true
+                        showText = true
+                        textOffset = -15
+                        isVisible = false
+                    }
                                 
                 }
                 
@@ -157,4 +168,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(ListViewModel())
 }

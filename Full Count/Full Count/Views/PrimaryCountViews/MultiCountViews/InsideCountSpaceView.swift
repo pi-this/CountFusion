@@ -46,145 +46,147 @@ struct InsideCountSpaceView: View {
     
     var body: some View {
     
-        VStack {
-            HStack {
-                Button("← Back") {
-                    insideAddedView = false
-                }
-                Spacer()
-            }
-            
-            HStack {
-                Spacer()
-                Button(favorite == currentTitle ? "❤️" : "♡") {
-                    if favorite == currentTitle {
-                        if useFavPopup {
-                            markHeartPresent = false
-                        }
-                        else {
-                            favorite = currentTitle
-                        }
+        ScrollView {
+            VStack {
+                HStack {
+                    Button("← Back") {
+                        insideAddedView = false
                     }
-                    else {
-                        if useFavPopup {
-                            markHeartPresent = true
+                    Spacer()
+                }
+                
+                HStack {
+                    Spacer()
+                    Button(favorite == currentTitle ? "❤️" : "♡") {
+                        if favorite == currentTitle {
+                            if useFavPopup {
+                                markHeartPresent = false
+                            }
+                            else {
+                                favorite = currentTitle
+                            }
                         }
                         else {
-                            favorite = currentTitle
-                            favSet()
+                            if useFavPopup {
+                                markHeartPresent = true
+                            }
+                            else {
+                                favorite = currentTitle
+                                favSet()
+                            }
+                            
                         }
                         
                     }
-                    
+                    .font(.system(size: favorite == currentTitle ? 15 : 20))
+                    .alert(isPresented: $markHeartPresent) {
+                        Alert(
+                            title: Text("Mark as Favorite?"),
+                            message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
+                            primaryButton: .destructive(Text("Yes")) {
+                                favorite = currentTitle
+                                favSet()
+                            },
+                            secondaryButton: .cancel()
+                        )
+
+                        
+                        
+                    }
+                    .padding(2)
+
                 }
-                .font(.system(size: favorite == currentTitle ? 15 : 20))
-                .alert(isPresented: $markHeartPresent) {
-                    Alert(
-                        title: Text("Mark as Favorite?"),
-                        message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
-                        primaryButton: .destructive(Text("Yes")) {
-                            favorite = currentTitle
-                            favSet()
-                        },
-                        secondaryButton: .cancel()
+                .padding(.horizontal, 25)
+                
+                Text("\(currentTitle)")
+                    .font(.largeTitle)
+                    .padding()
+                
+                
+                Text("\(formatNumber(currentValue))")
+                    .font(.title)
+                    .padding()
+                
+                
+                HStack {
+                    // use this for subtraction of specific amounts
+                    Spacers(amount: 3)
+                    TextField("Change the display name", text: $newTitle)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .multilineTextAlignment(.center)
+                    Button("📝") {
+                        if textIsAppropriate() {
+                            listViewModel.updateItemTitle(currentTitle: currentTitle, newTitle: newTitle)
+                            insideAddedView = false
+                        }
+                        favSet()
+                    }
+                    .font(.system(size: 45, weight: .bold)) .foregroundColor(.green) .frame(width: 50, height: 50) // Set the frame size to be square
+                    .background(colorScheme == .dark ? Color.black : Color.white)
+                    .clipShape(Circle())
+                    .overlay( // Add an overlay
+                        Circle() // Use a circle shape for the overlay
+                            .stroke(Color.blue, lineWidth: 5) // Set the border color and width
                     )
-
-                    
-                    
+                    Spacers(amount: 7)
                 }
-                .padding(2)
-
-            }
-            .padding(.horizontal, 25)
-            
-            Text("\(currentTitle)")
-                .font(.largeTitle)
-                .padding()
-            
-            
-            Text("\(formatNumber(currentValue))")
-                .font(.title)
-                .padding()
-            
-            
-            HStack {
-                // use this for subtraction of specific amounts
-                Spacers(amount: 3)
-                TextField("Change the display name", text: $newTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .multilineTextAlignment(.center)
-                Button("📝") {
-                    if textIsAppropriate() {
-                        listViewModel.updateItemTitle(currentTitle: currentTitle, newTitle: newTitle)
-                        insideAddedView = false
+                
+                
+                HStack {
+                    // use this for addition of specific amounts
+                    Spacers(amount: 3)
+                    TextField("Add a Specific Amount", text: $valueAdd)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .multilineTextAlignment(.center)
+                        .keyboardType(.decimalPad)
+                    Button("+") {
+                        if let doubleValue = Double(valueAdd) {
+                            listViewModel.updateItemAdd(title: currentTitle, amount: doubleValue)
+                            insideAddedView = false
+                        }
+                        favSet()
                     }
-                    favSet()
+                    .font(.system(size: 45, weight: .bold)) .foregroundColor(.green)
+                    .frame(width: 50, height: 50) // Set the frame size to be square
+                    .background(colorScheme == .dark ? Color.black : Color.white)
+                    .clipShape(Circle())
+                    .overlay( // Add an overlay
+                        Circle() // Use a circle shape for the overlay
+                            .stroke(Color.green, lineWidth: 5) // Set the border color and width
+                    )
+                    Spacers(amount: 7)
                 }
-                .font(.system(size: 45, weight: .bold)) .foregroundColor(.green) .frame(width: 50, height: 50) // Set the frame size to be square
-                .background(colorScheme == .dark ? Color.black : Color.white)
-                .clipShape(Circle())
-                .overlay( // Add an overlay
-                    Circle() // Use a circle shape for the overlay
-                        .stroke(Color.blue, lineWidth: 5) // Set the border color and width
-                )
-                Spacers(amount: 7)
-            }
-            
-            
-            HStack {
-                // use this for addition of specific amounts
-                Spacers(amount: 3)
-                TextField("Add a Specific Amount", text: $valueAdd)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .multilineTextAlignment(.center)
-                    .keyboardType(.decimalPad)
-                Button("+") {
-                    if let doubleValue = Double(valueAdd) {
-                        listViewModel.updateItemAdd(title: currentTitle, amount: doubleValue)
-                        insideAddedView = false
-                    }
-                    favSet()
+                
+                HStack {
+                    // use this for subtraction of specific amounts
+                    Spacers(amount: 3)
+                    TextField("Subtract a Specific Amount", text: $valueSubtract)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .multilineTextAlignment(.center)
+                        .keyboardType(.decimalPad)
+                    Button("-") {
+                        if let doubleValue = Double(valueSubtract) {
+                            listViewModel.updateItemAdd(title: currentTitle, amount: -doubleValue)
+                            insideAddedView = false
+                        }
+                        favSet()
+                     }
+                    .font(.system(size: 45, weight: .bold)) .foregroundColor(.red) .frame(width: 50, height: 50) // Set the frame size to be square
+                    .background(colorScheme == .dark ? Color.black : Color.white)
+                    .clipShape(Circle())
+                    .overlay( // Add an overlay
+                        Circle() // Use a circle shape for the overlay
+                            .stroke(Color.red, lineWidth: 5) // Set the border color and width
+                    )
+                    Spacers(amount: 7)
                 }
-                .font(.system(size: 45, weight: .bold)) .foregroundColor(.green)
-                .frame(width: 50, height: 50) // Set the frame size to be square
-                .background(colorScheme == .dark ? Color.black : Color.white)
-                .clipShape(Circle())
-                .overlay( // Add an overlay
-                    Circle() // Use a circle shape for the overlay
-                        .stroke(Color.green, lineWidth: 5) // Set the border color and width
-                )
-                Spacers(amount: 7)
-            }
-            
-            HStack {
-                // use this for subtraction of specific amounts
+      
+                
+                
                 Spacers(amount: 3)
-                TextField("Subtract a Specific Amount", text: $valueSubtract)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .multilineTextAlignment(.center)
-                    .keyboardType(.decimalPad)
-                Button("-") {
-                    if let doubleValue = Double(valueSubtract) {
-                        listViewModel.updateItemAdd(title: currentTitle, amount: -doubleValue)
-                        insideAddedView = false
-                    }
-                    favSet()
-                 }
-                .font(.system(size: 45, weight: .bold)) .foregroundColor(.red) .frame(width: 50, height: 50) // Set the frame size to be square
-                .background(colorScheme == .dark ? Color.black : Color.white)
-                .clipShape(Circle())
-                .overlay( // Add an overlay
-                    Circle() // Use a circle shape for the overlay
-                        .stroke(Color.red, lineWidth: 5) // Set the border color and width
-                )
-                Spacers(amount: 7)
+                
+                
             }
-  
-            
-            
-            Spacers(amount: 3)
-            
-            
         }
         
    
@@ -230,4 +232,6 @@ struct Spacers: View {
 #Preview {
     var item: CountSpaceItemModel { .init(title: "Test Item", value: 0.0, favorite: false) }
     InsideCountSpaceView(item: item)
+        .environmentObject(ListViewModel())
+        
 }

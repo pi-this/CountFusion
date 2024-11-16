@@ -49,7 +49,7 @@ struct NoCountSpaceItemsView: View {
                     )
                     .scaleEffect(animate ? 1.1 : 1.0)
                     .offset(y: animate ? -7 : 0)
-                    .padding(.bottom, 200)
+                    .padding(.bottom, 20)
                 
                 
                 

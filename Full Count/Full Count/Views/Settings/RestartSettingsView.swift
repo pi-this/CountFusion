@@ -20,6 +20,7 @@ struct RestartSettingsView: View {
     @AppStorage("showRestoreSettingsAlert") var showRestoreSettingsAlert: Bool = false
     @AppStorage("showRestoreAllSettingsAlert") var showRestoreAllSettingsAlert: Bool = false
     @AppStorage("useFavPopup") var useFavPopup: Bool = true
+    @AppStorage("introAnimation") var introAnimation: Bool = true
     
     @EnvironmentObject var listViewModel: ListViewModel
     
@@ -46,6 +47,7 @@ struct RestartSettingsView: View {
                         countBySheet = false
                         addAllByStr = "1"
                         useFavPopup = true
+                        introAnimation = true
                     },
                     secondaryButton: .cancel(Text("No"))
 

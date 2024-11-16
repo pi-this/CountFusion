@@ -54,52 +54,82 @@ struct SettingsView: View {
     @AppStorage("showFullCount") var showFullCount: Bool = false
     @AppStorage("showInningOver") var showInningOver: Bool = true
     @AppStorage("useFavPopup") var useFavPopup: Bool = true
+    @AppStorage("introAnimation") var introAnimation: Bool = true
     
     
-    // 2 is baseball
-    // 1 is custom
-    // 3 is To Do
+    @State private var searchText = ""
+    @State private var settings = ["General", "Preferences", "Appearance", "Count", "Favorite and Widget", "Animation", "Display"]
+    
+    var filteredSettings: [String] { settings.filter { setting in searchText.isEmpty || setting.lowercased().contains(searchText.lowercased()) } }
 
     var body: some View {
         NavigationView {
             Form {
                 
-                Section(header: Text("Count"), footer: Text("Select the increment value for counting. This setting customizes how your counts are adjusted.")) {
-                        
-                        VStack {
-                            HStack {
-                                Spacer()
-                                Text("Count By...")
-                                Spacer()
+                SearchBar(text: $searchText, placeholder: "Search Settings")
+                
+                if !searchText.isEmpty {
+                    Section () {
+                        List(filteredSettings, id: \.self) { setting in
+                            if setting == "Count" {
+                                SectionSettingsView(destinationType: CounterSettingsView(), text: "#️⃣ Count")
+                            }
+                            else if setting == "Favorite and Widget" {
+                                SectionSettingsView(destinationType: FavoriteSettingsView(), text: "❤️ Favorite and Widget")
+                            }
+                            else if setting == "Animation" {
+                                SectionSettingsView(destinationType: AnimationSettingsView(), text: "🚙 Animation")
+                            }
+                            else if setting == "Display" {
+                                SectionSettingsView(destinationType: DisplaySettingsView(), text: "📺 Display")
+                            }
+                            else if setting == "General" {
+                                SectionSettingsView(destinationType: GeneralSettingsView(), text: "⚙️ General")
+                            }
+                            else if setting == "Preferences" {
+                                SectionSettingsView(destinationType: PreferencesSettingsView(), text: "🤔 Preferences")
+                            }
+                            else if setting == "Appearance" {
+                                SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
                             }
                         }
-                        
-                        CountByView()
-                        
-                    }
-                
-                Section(header: Text("Favorite") , footer: Text("Toggle to show or hide the favorite notification. Only one favorite item can be displayed on the widget. This feature is enabled by default.")) {
-                    VStack {
-                        Toggle(isOn: $useFavPopup) {
-                            Text("Ask for favorite toggle")
-                        }
-                    }
-                }
-
-                
-                
-                Section(header: Text("Advanced Settings")) {
-                    VStack {
-                        NavigationLink(destination: AdvancedSettingsView()) {
-                            Text("Open")
-                        }
                     }
                 }
                 
+                
+                
+                
+                Section() {
+                    VStack {
+                        HStack {
+                            NavigationLink(destination: GeneralSettingsView()) {
+                                Text("⚙️ General")
+                            }
+                        }
+                    }
+                    
+                    VStack {
+                        HStack {
+                            NavigationLink(destination: PreferencesSettingsView()) {
+                                Text("🤔 Preferences")
+                            }
+                        }
+                    }
+                    
+                    VStack {
+                        HStack {
+                            NavigationLink(destination: AppearanceSettingsView()) {
+                                Text("🖥️ Appearance")
+                            }
+                        }
+                    }
+                    
+                }
                 
                 RestartSettingsView()
                 
             }
+            .navigationBarTitle("Settings")
         }
     }
 }
