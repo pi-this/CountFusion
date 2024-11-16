@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
-
 class ListViewModel: ObservableObject {
     @AppStorage("addAllByStr") var addAllByStr = ""
     @Published var items: [CountSpaceItemModel] = [] {
@@ -19,6 +18,17 @@ class ListViewModel: ObservableObject {
     }
     
     @Published var selectedCountSpace: String?
+    
+    @Published var searchText: String = ""
+    @Published var favorite: String = ""
+    @Published var count: Double = 0
+    @Published var countTitle: String = ""
+    var filteredItems: [CountSpaceItemModel] {
+        if searchText.isEmpty { return items }
+        else { return items.filter { $0.title.lowercased().contains(searchText.lowercased())
+        }
+        }
+    }
     
     let itemsKey: String = "items_list"
     
@@ -34,6 +44,7 @@ class ListViewModel: ObservableObject {
         
         self.items = savedItems
     }
+    
     
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
@@ -57,6 +68,14 @@ class ListViewModel: ObservableObject {
         items.move(fromOffsets: from, toOffset: to)
     }
     
+    func moveItemToBottom(item: CountSpaceItemModel) {
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            let movedItem = items.remove(at: index)
+            items.append(movedItem)
+        }
+    }
+
+
     func addItem(title: String) {
         let newItem = CountSpaceItemModel(title: title, value: 0.0, favorite: false)
         items.append(newItem)

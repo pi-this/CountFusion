@@ -58,7 +58,7 @@ struct SettingsView: View {
     
     
     @State private var searchText = ""
-    @State private var settings = ["General", "Preferences", "Appearance", "Count", "Favorite and Widget", "Animation", "Display"]
+    @State private var settings = ["General", "Preferences", "Appearance", "About & Help", "Count", "Favorite and Widget", "Animation"]
     
     var filteredSettings: [String] { settings.filter { setting in searchText.isEmpty || setting.lowercased().contains(searchText.lowercased()) } }
 
@@ -80,9 +80,6 @@ struct SettingsView: View {
                             else if setting == "Animation" {
                                 SectionSettingsView(destinationType: AnimationSettingsView(), text: "🚙 Animation")
                             }
-                            else if setting == "Display" {
-                                SectionSettingsView(destinationType: DisplaySettingsView(), text: "📺 Display")
-                            }
                             else if setting == "General" {
                                 SectionSettingsView(destinationType: GeneralSettingsView(), text: "⚙️ General")
                             }
@@ -90,6 +87,9 @@ struct SettingsView: View {
                                 SectionSettingsView(destinationType: PreferencesSettingsView(), text: "🤔 Preferences")
                             }
                             else if setting == "Appearance" {
+                                SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
+                            }
+                            else if setting == "About & Help" {
                                 SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
                             }
                         }
@@ -130,6 +130,8 @@ struct SettingsView: View {
                 
             }
             .navigationBarTitle("Settings")
+            .onTapGesture { UIApplication.shared.endEditing(true)
+            }
         }
     }
 }

@@ -17,21 +17,27 @@ import SwiftUI
 
 struct PreferencesSettingsView: View {
     var body: some View {
-        NavigationView {
             Form {
                 Section() {
                     
                     VStack {
                         HStack {
-                            NavigationLink(destination: AppearanceSettingsView()) {
-                                Text("🖥️ Appearance")
+                            NavigationLink(destination: FavoriteSettingsView()) {
+                                Text("❤️ Favorite and Widget")
+                            }
+                        }
+                    }
+                    
+                    VStack {
+                        HStack {
+                            NavigationLink(destination: AnimationSettingsView()) {
+                                Text("🚙 Animation")
                             }
                         }
                     }
                     
                 }
             }
-        }
     }
 }
 

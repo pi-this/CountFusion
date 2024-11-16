@@ -10,16 +10,22 @@ import SwiftUI
 struct CountSpaceMainView: View {
     @AppStorage("insideAddedView") var insideAddedView: Bool = false
     
+    @State private var searchText = ""
+    @State private var settings = ["General", "Preferences", "Appearance", "About & Help", "Count", "Favorite and Widget", "Animation"]
+    
     let item: CountSpaceItemModel
     
     var body: some View {
-        HStack {
-            if insideAddedView {
-                InsideCountSpaceView(item: item)
-            }
-            else {
-                CountSpaceView()
-                    .environmentObject(ListViewModel())
+        
+        VStack {
+            HStack {
+                if insideAddedView {
+                    InsideCountSpaceView(item: item)
+                }
+                else {
+                    CountSpaceView()
+                        .environmentObject(ListViewModel())
+                }
             }
         }
     }

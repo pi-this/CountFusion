@@ -6,7 +6,20 @@
 //
 
 import SwiftUI
+
+extension UIApplication {
+    func endEditing(_ force: Bool) {
+        guard let windowScene = connectedScenes.first as? UIWindowScene else { return }
+        windowScene.windows
+            .filter { $0.isKeyWindow }
+            .first?
+            .endEditing(force)
+    }
+}
+
+
 import WidgetKit
+
 
 struct CountSpaceView: View {
     
@@ -30,6 +43,12 @@ struct CountSpaceView: View {
     
     @State var markHeartPresent: Bool = false
     
+    @State private var searchText = ""
+    @State private var countList: [String] = []
+
+
+    
+    var filteredSettings: [String] { countList.filter { setting in searchText.isEmpty || setting.lowercased().contains(searchText.lowercased()) } }
 
     func favSet(titleItem: String, valueItem: Double) {
         if favorite == titleItem {
@@ -47,6 +66,7 @@ struct CountSpaceView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                
 
                 if listViewModel.items.isEmpty {
                     NoCountSpaceItemsView()
@@ -54,7 +74,13 @@ struct CountSpaceView: View {
                 }
                 // only show list if there are items
                 else {
+      
+                    
+                    
                     List {
+                        SearchBar(text: $searchText, placeholder: "Search Count Space Items")
+ 
+                        
                         Button("Delete all counters.") {
                             deleteAllItemsAlert = true
                         }
@@ -72,90 +98,104 @@ struct CountSpaceView: View {
                             
                             
                         }
+                        
                         ForEach(listViewModel.items) { item in // does not need , id: \.self because the model has an id inside
-                            HStack {
-                                ListRowCountSpaceView(item: item)
-                                    .onTapGesture {
-                                        withAnimation(.linear) {
-                                            currentTitle = item.title
-                                            currentValue = item.value
-                                            insideAddedView = true
-                                        }
-                                    }
-
-                                Text("➖")
-                                    .onTapGesture {
-                                        listViewModel.updateItemSubtract(item: item)
-                                        favSet(titleItem: item.title, valueItem: item.value)
-                                }
-                                Spacers(amount: 3)
-                                Text("➕")
-                                    .onTapGesture{
-                                        listViewModel.updateItemAdd(item: item)
-                                        favSet(titleItem: item.title, valueItem: item.value)
-                                    }
-                                    .padding(.horizontal, 5)
-                                
-
+                            if filteredSettings.contains(item.title) {
                                 HStack {
-                                    ZStack {
-                                        Circle()
-                                            .frame(width: 30, height: 50)
-                                            .foregroundColor(.fadeGray)
-                                            .blur(radius: 3)
-                                            .padding()
-                                        Button(favorite == item.title ? "❤️" : "♡") {
-                                            if favorite == item.title {
- 
-                                                if useFavPopup {
-                                                    markHeartPresent = false
-                                                }
-                                                else {
-                                                    favorite = item.title
-                                                }
+                                    ListRowCountSpaceView(item: item)
+                                        .onTapGesture {
+                                            withAnimation(.linear) {
+                                                currentTitle = item.title
+                                                currentValue = item.value
+                                                insideAddedView = true
                                             }
-                                            else {
-                                                if useFavPopup {
-                                                    selectedItem = item // records selected item to fix the error where the tiem.title didn't seam to carry over to the alert
-                                                    markHeartPresent = true
+                                        }
+
+                                    Text("➖")
+                                        .onTapGesture {
+                                            listViewModel.updateItemSubtract(item: item)
+                                            favSet(titleItem: item.title, valueItem: item.value)
+                                    }
+                                    Spacers(amount: 3)
+                                    Text("➕")
+                                        .onTapGesture{
+                                            listViewModel.updateItemAdd(item: item)
+                                            favSet(titleItem: item.title, valueItem: item.value)
+                                        }
+                                        .padding(.horizontal, 5)
+                                    
+
+                                    HStack {
+                                        ZStack {
+                                            Circle()
+                                                .frame(width: 30, height: 50)
+                                                .foregroundColor(.fadeGray)
+                                                .blur(radius: 3)
+                                                .padding()
+                                            Button(favorite == item.title ? "❤️" : "♡") {
+                                                if favorite == item.title {
+     
+                                                    if useFavPopup {
+                                                        markHeartPresent = false
+                                                    }
+                                                    else {
+                                                        favorite = item.title
+                                                    }
                                                 }
                                                 else {
-                                                    selectedItem = item
-                                                    favorite = selectedItem?.title ?? ""
-                                                    favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                    if useFavPopup {
+                                                        selectedItem = item // records selected item to fix the error where the tiem.title didn't seam to carry over to the alert
+                                                        markHeartPresent = true
+                                                    }
+                                                    else {
+                                                        selectedItem = item
+                                                        favorite = selectedItem?.title ?? ""
+                                                        favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                    }
+                                                    
+                                                    
                                                 }
-                                                
+                                            
                                                 
                                             }
                                         
-                                            
-                                        }
-                                    
-                                        .font(.system(size: favorite == item.title ? 15 : 20))
-                                        .alert(isPresented: $markHeartPresent) {
-                                            Alert(
-                                                title: Text("Mark as Favorite?"),
-                                                message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
-                                                primaryButton: .destructive(Text("Yes")) {
-                                                    favorite = selectedItem?.title ?? ""
-                                                    favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
-                                                },
-                                                secondaryButton: .cancel()
-                                            )
+                                            .font(.system(size: favorite == item.title ? 15 : 20))
+                                            .alert(isPresented: $markHeartPresent) {
+                                                Alert(
+                                                    title: Text("Mark as Favorite?"),
+                                                    message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
+                                                    primaryButton: .destructive(Text("Yes")) {
+                                                        favorite = selectedItem?.title ?? ""
+                                                        favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                    },
+                                                    secondaryButton: .cancel()
+                                                )
 
-                                            
-                                            
+                                                
+                                                
+                                            }
                                         }
-                                        .padding(2)
+                                        
+
                                     }
-                                    
-
                                 }
-                                .padding(.horizontal, 2)
                             }
+                            else {
+                                Text("")
+                                    .onAppear() {
+                                        listViewModel.moveItemToBottom(item: item)
+                                    }
+                                
+                                
+                                
+                            }
+                            
                         }
                         .onDelete(perform: listViewModel.deleteItem)
                         .onMove(perform: listViewModel.moveItem)
+                        .onAppear() {
+                            countList = listViewModel.items.map { $0.title }
+                        }
                         
                         
                     }
@@ -167,6 +207,8 @@ struct CountSpaceView: View {
                 leading: EditButton(),
                 trailing:
                     NavigationLink("Add", destination: AddCountSpaceView()))
+            .onTapGesture { UIApplication.shared.endEditing(true)
+            }
         }
     }
 }

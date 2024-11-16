@@ -17,28 +17,7 @@ import SwiftUI
 
 struct AppearanceSettingsView: View {
     var body: some View {
-        NavigationView {
-            Form {
-                Section() {
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: FavoriteSettingsView()) {
-                                Text("❤️ Favorite and Widget")
-                            }
-                        }
-                    }
-                    
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: AnimationSettingsView()) {
-                                Text("🚙 Animation")
-                            }
-                        }
-                    }
-                    
-                }
-            }
-        }
+        LightDarkSettingsView()
     }
 }
 

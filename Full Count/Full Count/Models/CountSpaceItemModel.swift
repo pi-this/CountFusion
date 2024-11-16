@@ -39,4 +39,9 @@ struct CountSpaceItemModel: Identifiable, Codable {
     func subtractToValue(addAmount: Double) -> CountSpaceItemModel {
         return CountSpaceItemModel(id: id, title: title, value: value - addAmount, favorite: favorite)
     }
+    
+    
+
+    
+
 }

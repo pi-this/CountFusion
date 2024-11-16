@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GeneralSettingsView: View {
     var body: some View {
-        NavigationView {
             Form {
                 Section() {
                     VStack {
@@ -22,7 +21,6 @@ struct GeneralSettingsView: View {
                     
                 }
             }
-        }
     }
 }
 
