@@ -64,152 +64,165 @@ struct CountSpaceView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                
-
-                if listViewModel.items.isEmpty {
-                    NoCountSpaceItemsView()
-                        .transition(AnyTransition.opacity.animation(.easeIn))
+        
+        VStack {
+            if !listViewModel.items.isEmpty {
+                Button("Delete all counters.") {
+                    deleteAllItemsAlert = true
+                    print("delete all items")
                 }
-                // only show list if there are items
-                else {
-      
+                .padding()
+                .foregroundStyle(Color.red)
+                .alert(isPresented: $deleteAllItemsAlert) {
+                    Alert(
+                        title: Text("Delete All Counters"),
+                        message: Text("Delete All Counters"),
+                        primaryButton: .destructive(Text("Yes, delete")) {
+                            listViewModel.deleteAllItems()
+                        },
+                        secondaryButton: .cancel()
+                        
+                    )
                     
                     
-                    List {
-                        SearchBar(text: $searchText, placeholder: "Search Count Space Items")
- 
-                        
-                        Button("Delete all counters.") {
-                            deleteAllItemsAlert = true
-                        }
-                        .foregroundStyle(Color.red)
-                        .alert(isPresented: $deleteAllItemsAlert) {
-                            Alert(
-                                title: Text("Delete All Counters"),
-                                message: Text("Delete All Counters"),
-                                primaryButton: .destructive(Text("Yes, delete")) {
-                                    listViewModel.deleteAllItems()
-                                },
-                                secondaryButton: .cancel()
-                                
-                            )
-                            
-                            
-                        }
-                        
-                        ForEach(listViewModel.items) { item in // does not need , id: \.self because the model has an id inside
-                            if filteredSettings.contains(item.title) {
-                                HStack {
-                                    ListRowCountSpaceView(item: item)
-                                        .onTapGesture {
-                                            withAnimation(.linear) {
-                                                currentTitle = item.title
-                                                currentValue = item.value
-                                                insideAddedView = true
-                                            }
-                                        }
+                }
+            }
+            
+            NavigationView {
+                ZStack {
+                    
+                    
+                    
 
-                                    Text("➖")
-                                        .onTapGesture {
-                                            listViewModel.updateItemSubtract(item: item)
-                                            favSet(titleItem: item.title, valueItem: item.value)
-                                    }
-                                    Spacers(amount: 3)
-                                    Text("➕")
-                                        .onTapGesture{
-                                            listViewModel.updateItemAdd(item: item)
-                                            favSet(titleItem: item.title, valueItem: item.value)
-                                        }
-                                        .padding(.horizontal, 5)
-                                    
-
-                                    HStack {
-                                        ZStack {
-                                            Circle()
-                                                .frame(width: 30, height: 50)
-                                                .foregroundColor(.fadeGray)
-                                                .blur(radius: 3)
-                                                .padding()
-                                            Button(favorite == item.title ? "❤️" : "♡") {
-                                                if favorite == item.title {
+                    if listViewModel.items.isEmpty {
+                        NoCountSpaceItemsView()
+                            .transition(AnyTransition.opacity.animation(.easeIn))
+                    }
+                    // only show list if there are items
+                    else {
+          
+                        
+                        
+                        List {
+                            SearchBar(text: $searchText, placeholder: "Search Count Space Items")
      
-                                                    if useFavPopup {
-                                                        markHeartPresent = false
-                                                    }
-                                                    else {
-                                                        favorite = item.title
-                                                    }
+                            ForEach(listViewModel.items) { item in // does not need , id: \.self because the model has an id inside
+                                if filteredSettings.contains(item.title) {
+                                    HStack {
+                                        ListRowCountSpaceView(item: item)
+                                            .onTapGesture {
+                                                withAnimation(.linear) {
+                                                    currentTitle = item.title
+                                                    currentValue = item.value
+                                                    insideAddedView = true
                                                 }
-                                                else {
-                                                    if useFavPopup {
-                                                        selectedItem = item // records selected item to fix the error where the tiem.title didn't seam to carry over to the alert
-                                                        markHeartPresent = true
+                                            }
+
+                                        Text("➖")
+                                            .onTapGesture {
+                                                listViewModel.updateItemSubtract(item: item)
+                                                favSet(titleItem: item.title, valueItem: item.value)
+                                        }
+                                        Spacers(amount: 3)
+                                        Text("➕")
+                                            .onTapGesture{
+                                                listViewModel.updateItemAdd(item: item)
+                                                favSet(titleItem: item.title, valueItem: item.value)
+                                            }
+                                            .padding(.horizontal, 5)
+                                        
+
+                                        HStack {
+                                            ZStack {
+                                                Circle()
+                                                    .frame(width: 30, height: 50)
+                                                    .foregroundColor(.fadeGray)
+                                                    .blur(radius: 3)
+                                                    .padding()
+                                                Button(favorite == item.title ? "❤️" : "♡") {
+                                                    if favorite == item.title {
+         
+                                                        if useFavPopup {
+                                                            markHeartPresent = false
+                                                        }
+                                                        else {
+                                                            favorite = item.title
+                                                        }
                                                     }
                                                     else {
-                                                        selectedItem = item
-                                                        favorite = selectedItem?.title ?? ""
-                                                        favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                        if useFavPopup {
+                                                            selectedItem = item // records selected item to fix the error where the tiem.title didn't seam to carry over to the alert
+                                                            markHeartPresent = true
+                                                        }
+                                                        else {
+                                                            selectedItem = item
+                                                            favorite = selectedItem?.title ?? ""
+                                                            favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                        }
+                                                        
+                                                        
                                                     }
-                                                    
+                                                
                                                     
                                                 }
                                             
-                                                
-                                            }
-                                        
-                                            .font(.system(size: favorite == item.title ? 15 : 20))
-                                            .alert(isPresented: $markHeartPresent) {
-                                                Alert(
-                                                    title: Text("Mark as Favorite?"),
-                                                    message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
-                                                    primaryButton: .destructive(Text("Yes")) {
-                                                        favorite = selectedItem?.title ?? ""
-                                                        favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
-                                                    },
-                                                    secondaryButton: .cancel()
-                                                )
+                                                .font(.system(size: favorite == item.title ? 15 : 20))
+                                                .alert(isPresented: $markHeartPresent) {
+                                                    Alert(
+                                                        title: Text("Mark as Favorite?"),
+                                                        message: Text("Only one favorite item is allowed at a time. This will be displayed on your widget."),
+                                                        primaryButton: .destructive(Text("Yes")) {
+                                                            favorite = selectedItem?.title ?? ""
+                                                            favSet(titleItem: selectedItem?.title ?? "", valueItem: selectedItem?.value ?? 0)
+                                                        },
+                                                        secondaryButton: .cancel()
+                                                    )
 
-                                                
-                                                
+                                                    
+                                                    
+                                                }
                                             }
+                                            
+
                                         }
-                                        
-
                                     }
                                 }
+                                else {
+                                    Text("")
+                                        .onAppear() {
+                                            listViewModel.moveItemToBottom(item: item)
+                                        }
+                                    
+                                    
+                                    
+                                }
+                                
                             }
-                            else {
-                                Text("")
-                                    .onAppear() {
-                                        listViewModel.moveItemToBottom(item: item)
-                                    }
-                                
-                                
-                                
+                            .onDelete(perform: listViewModel.deleteItem)
+                            .onMove(perform: listViewModel.moveItem)
+                            .onAppear() {
+                                countList = listViewModel.items.map { $0.title }
                             }
                             
+                            
+                            
+                            
                         }
-                        .onDelete(perform: listViewModel.deleteItem)
-                        .onMove(perform: listViewModel.moveItem)
-                        .onAppear() {
-                            countList = listViewModel.items.map { $0.title }
-                        }
-                        
-                        
+                        .listStyle(PlainListStyle())
                     }
-                    .listStyle(PlainListStyle())
+                }
+                .navigationTitle("Counters")
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing:
+                        NavigationLink("Add", destination: AddCountSpaceView()))
+                .onTapGesture { UIApplication.shared.endEditing(true)
                 }
             }
-            .navigationTitle("Counters")
-            .navigationBarItems(
-                leading: EditButton(),
-                trailing:
-                    NavigationLink("Add", destination: AddCountSpaceView()))
-            .onTapGesture { UIApplication.shared.endEditing(true)
-            }
         }
+        
+        
+        
     }
 }
 
