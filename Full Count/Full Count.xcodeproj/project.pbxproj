@@ -39,6 +39,7 @@
 		2BA42F942CD9BD46002EC0E8 /* CountByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA42F932CD9BD46002EC0E8 /* CountByView.swift */; };
 		2BAC913D2CD9D1C00004C9BC /* ListErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */; };
 		2BBB42062CCC0F7200B94E2B /* LightDarkSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB42052CCC0F7100B94E2B /* LightDarkSettingsView.swift */; };
+		2BBE4FF32CEA87E600138D58 /* SettingsView 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE4FF22CEA87E600138D58 /* SettingsView 2.swift */; };
 		2BDCB6BD2CB5C25A009674C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */; };
 		2BF276432CD5506600D2A3A5 /* InsideCountSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */; };
 		2BF276452CD550DB00D2A3A5 /* CountSpaceMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */; };
@@ -104,6 +105,7 @@
 		2BA42F932CD9BD46002EC0E8 /* CountByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountByView.swift; sourceTree = "<group>"; };
 		2BAC913C2CD9D1C00004C9BC /* ListErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListErrorModel.swift; sourceTree = "<group>"; };
 		2BBB42052CCC0F7100B94E2B /* LightDarkSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkSettingsView.swift; sourceTree = "<group>"; };
+		2BBE4FF22CEA87E600138D58 /* SettingsView 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView 2.swift"; sourceTree = "<group>"; };
 		2BDCB6BC2CB5C25A009674C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2BF276422CD5506600D2A3A5 /* InsideCountSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCountSpaceView.swift; sourceTree = "<group>"; };
 		2BF276442CD550DB00D2A3A5 /* CountSpaceMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountSpaceMainView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		2B9A0E412CD7ED9B00B8A03C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				2BBE4FF22CEA87E600138D58 /* SettingsView 2.swift */,
 				2B6F94A22CE8EB2F0034E095 /* SectionSettingsView.swift */,
 				2B6F94A02CE8EA4C0034E095 /* SearchBar.swift */,
 				2B6F94892CE8E7840034E095 /* Settings Groups */,
@@ -498,6 +501,7 @@
 				2BA3AD812CCEF89B00FF8ABC /* CountSpaceView.swift in Sources */,
 				2B9A0E452CD7EF6C00B8A03C /* RestartSettingsView.swift in Sources */,
 				2B9701732BF2F94F00C02353 /* Full_CountApp.swift in Sources */,
+				2BBE4FF32CEA87E600138D58 /* SettingsView 2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

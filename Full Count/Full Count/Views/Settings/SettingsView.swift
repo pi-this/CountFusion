@@ -66,31 +66,33 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 
-                SearchBar(text: $searchText, placeholder: "Search Settings")
-                
-                if !searchText.isEmpty {
-                    Section () {
-                        List(filteredSettings, id: \.self) { setting in
-                            if setting == "Count" {
-                                SectionSettingsView(destinationType: CounterSettingsView(), text: "#️⃣ Count")
-                            }
-                            else if setting == "Favorite and Widget" {
-                                SectionSettingsView(destinationType: FavoriteSettingsView(), text: "❤️ Favorite and Widget")
-                            }
-                            else if setting == "Animation" {
-                                SectionSettingsView(destinationType: AnimationSettingsView(), text: "🚙 Animation")
-                            }
-                            else if setting == "General" {
-                                SectionSettingsView(destinationType: GeneralSettingsView(), text: "⚙️ General")
-                            }
-                            else if setting == "Preferences" {
-                                SectionSettingsView(destinationType: PreferencesSettingsView(), text: "🤔 Preferences")
-                            }
-                            else if setting == "Appearance" {
-                                SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
-                            }
-                            else if setting == "About & Help" {
-                                SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
+                Section {
+                    SearchBar(text: $searchText, placeholder: "Search Settings")
+                    
+                    if !searchText.isEmpty {
+                        Section () {
+                            List(filteredSettings, id: \.self) { setting in
+                                if setting == "Count" {
+                                    SectionSettingsView(destinationType: CounterSettingsView(), text: "#️⃣ Count")
+                                }
+                                else if setting == "Favorite and Widget" {
+                                    SectionSettingsView(destinationType: FavoriteSettingsView(), text: "❤️ Favorite and Widget")
+                                }
+                                else if setting == "Animation" {
+                                    SectionSettingsView(destinationType: AnimationSettingsView(), text: "🚙 Animation")
+                                }
+                                else if setting == "General" {
+                                    SectionSettingsView(destinationType: GeneralSettingsView(), text: "⚙️ General")
+                                }
+                                else if setting == "Preferences" {
+                                    SectionSettingsView(destinationType: PreferencesSettingsView(), text: "🤔 Preferences")
+                                }
+                                else if setting == "Appearance" {
+                                    SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
+                                }
+                                else if setting == "About & Help" {
+                                    SectionSettingsView(destinationType: AppearanceSettingsView(), text: "🖥️ Appearance")
+                                }
                             }
                         }
                     }
@@ -99,39 +101,30 @@ struct SettingsView: View {
                 
                 
                 
-                Section() {
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: GeneralSettingsView()) {
-                                Text("⚙️ General")
-                            }
-                        }
+                
+                
+                Section {
+                    NavigationLink(destination: GeneralSettingsView()) {
+                        Text("⚙️ General")
                     }
                     
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: PreferencesSettingsView()) {
-                                Text("🤔 Preferences")
-                            }
-                        }
+                    NavigationLink(destination: PreferencesSettingsView()) {
+                        Text("🤔 Preferences")
                     }
                     
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: AppearanceSettingsView()) {
-                                Text("🖥️ Appearance")
-                            }
-                        }
+                    NavigationLink(destination: AppearanceSettingsView()) {
+                        Text("🖥️ Appearance")
                     }
                     
                 }
+                .navigationBarTitle("Settings")
                 
-                RestartSettingsView()
+                
+                
                 
             }
-            .navigationBarTitle("Settings")
-            .onTapGesture { UIApplication.shared.endEditing(true)
-            }
+            RestartSettingsView()
+            
         }
     }
 }
